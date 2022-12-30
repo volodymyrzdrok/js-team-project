@@ -4,3 +4,10 @@
 @import './utils/vars.scss';
 @import './utils/base.scss';
 @import './utils/mixins.scss';
+
+@import './components/header';
+@import './components/hero';
+@import './components/products';
+@import './components/modal-ingredInfo';
+@import './components/modal-productInfo';
+@import './components/footer';
