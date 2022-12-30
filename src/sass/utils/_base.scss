@@ -1,0 +1,62 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $white-bg-color;
+  color: $primary-dark-text-color;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media (max-width: $to-mobile) {
+    max-width: 479px;
+  }
+
+  @media (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media (min-width: $desktop) {
+    width: $desktop;
+  }
+}
