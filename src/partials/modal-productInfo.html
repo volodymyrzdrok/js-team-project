@@ -1,0 +1,45 @@
+       <button type="button" data-modal-open>
+  Launch demo modal
+</button>
+    <div class="cocktails__backdrop is-hidden" data-modal>
+      <div class="cocktails-modal">
+        <button class="cocktails-modal__close-btn" type="button" data-modal-close>
+          <svg class="cocktails-modal__btn-icon" height="32" width="32">
+            <use href="./images/svgs.svg#close-btn"></use>
+          </svg>
+        </button>
+        <h3 class="cocktails-modal__title">Negroni</h3>
+        <p class="cocktails-modal__subtitle">Instractions:</p>
+        <p class="cocktails-modal__text-content">Add the gin, Campari and sweet vermouth to a mixing glass filled with ice, 
+          and stir until well-chilled. Strain into a rocks glass filled with large ice cubes. Garnish with an orange peel.</p>
+          <div class="cocktails-modal__thumb">
+            <img class="cocktails-modal__thumb-img" src="./images/ACID.jpg" alt="">
+          </div>
+          <p class="cocktails-modal__list-title">INGREDIENTS</p>
+          <p class="cocktails-modal__list-subtitle">Per cocktail</p>
+          <ul class="cocktails-modal__list">
+            <li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link" href="">Ice</a></li>
+            <li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link" href="">1 ounce gin</a></li>
+            <li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link" href="">1 ounce Campari</a></li>
+            <li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link" href="">1 ounce sweet vermouth</a></li>
+            <li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link" href="">Garnish: orange peel</a></li>
+          </ul>
+          <button class="cocktails-modal__main-btn">Add to favorite</button>
+      </div>
+    </div>
+    <script>
+        (() => {
+  const refs = {
+    openModalBtn: document.querySelector("[data-modal-open]"),
+    closeModalBtn: document.querySelector("[data-modal-close]"),
+    modal: document.querySelector("[data-modal]"),
+  };
+
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  refs.closeModalBtn.addEventListener("click", toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle("is-hidden");
+  }
+})();
+    </script>
