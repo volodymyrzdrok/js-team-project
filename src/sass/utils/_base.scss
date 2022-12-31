@@ -43,20 +43,20 @@ button {
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  outline: 1px solid orange;
 
-  @media (max-width: $to-mobile) {
+  @include mobile-only-media {
     max-width: 479px;
   }
 
-  @media (min-width: $mobile) {
+  @include mobile-media {
     width: $mobile;
   }
 
-  @media (min-width: $tablet) {
+  @include tablet-media {
     width: $tablet;
   }
-
-  @media (min-width: $desktop) {
+  @include desktop-media {
     width: $desktop;
   }
 }

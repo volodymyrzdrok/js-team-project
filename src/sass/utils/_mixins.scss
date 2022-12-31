@@ -29,31 +29,31 @@
   font-weight: $weight;
 }
 
-@mixin mobile-only {
+@mixin mobile-only-media {
   @media screen and (max-width: $to-mobile) {
     @content;
   }
 }
 
-@mixin mobile {
+@mixin mobile-media {
   @media screen and (min-width: $mobile) {
     @content;
   }
 }
 
-@mixin tablet {
+@mixin tablet-media {
   @media screen and (min-width: $tablet) {
     @content;
   }
 }
 
-@mixin tablet-only {
+@mixin tablet-only-media {
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     @content;
   }
 }
 
-@mixin desktop {
+@mixin desktop-media {
   @media screen and (min-width: $desktop) {
     @content;
   }
