@@ -1,19 +1,143 @@
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  
 
-   
-
-
-
-
- @media screen and (min-width: 768px) {
+.header_logo{
+    padding-right: 125px;
+}
 
 
- .page-header__container {
-     justify-content: space-between;
-     align-items: flex-end;
-     display: flex;
-     position: relative;
- }
+.form-submit{
+display: none;}
+
+.header__nav {
+    display: none;
+}
+
+.header-switcher {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+.form-submit{
+    display: none;
+}
+
+.mobile-menu__burger-btn {
+    background-color: white;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+    display: block;
+}
+}
 
 
+
+
+
+@media screen and (min-width: 768px) {
+
+
+.page-header__container {
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    position: relative;
+}
+
+.mobile-menu__burger-btn {
+    background-color: rgb(255, 255, 255);;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+    display: block;
+}
+
+
+// форма
+
+.form-submit {
+    width: 100%;
+    max-width: 288px;
+    height: 40px;
+    color: inherit;
+    border: 1px solid #fd5103;
+    border-radius: 4px;
+    transition-property: outline;
+    transition-duration: .25s;
+    padding: 8px;
+    display: flex;
+    align-items: center
+}
+
+.form-submit__input {
+    max-width: 247px;
+    border: none;
+}
+
+.form-submit__button {
+    padding: 0%;
+    border: none;
+    ;
+    background-color: rgb(255, 255, 255);
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+
+}
+
+.form-submit__input{
+height: 24px;
+width:100%;
+    font-size: 14px;
+        color: #5F6775;
+    padding-left: 8px;}
+
+.form-submit__input:focus{
+    outline: 0;
+    outline-offset: 0;
+}
+
+.line{
+    width: 1px;
+    height: 40px;
+    background-color: #fd5103;
+}
+
+
+.header__nav {
+    display: none;
+}
+.header-switcher {
+    display: none;
+}
+.mobile-menu {
+    display: none;
+}
+
+
+}
+
+@media screen and (min-width: 1280px) {
+.header__nav{
+display:flex;
+gap: 60px;
+
+}
+.site-nav__favorites{
+display: none;}
+.mobile-menu__burger{
+display: none;}
+
+.header-switcher{
+display: inline;}
+}
+
+.page-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
 }
