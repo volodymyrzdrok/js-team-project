@@ -1,0 +1,95 @@
+<header class="page-header">
+    <div class="container page-header__container">
+       
+            <a href="./index.html" class="header_logo">
+                <img src="/src/images/logo.png" alt="logo" class="logo_image">
+            </a>
+
+        <nav class="header__nav">
+                <ul class="site-nav list">
+                    <li class="site-nav__item"><a href="/src/index.html" class="site-nav__link">Home</a></li>
+                    <li class="site-nav__item"><a href="" class="site-nav__link link">Favorite</a>
+                       <ul>
+                           <li class="site-nav__item"><a href="" class="site-nav__link">Favorite cocktails</a></li>
+                           <li class="site-nav__item"><a href="" class="site-nav__link">Favorite ingredients</a></li>
+                      </ul>
+                    </li>
+                </ul>
+        </nav>
+
+
+        <form class = "header__form">
+            <input class="form__input" type="text" placeholder="Search">
+            <button class="form__button" type="submit">
+                    <svg class="logo__svg" width="24" height="24">
+                        <use href="/src/images/svgs.svg#icon-bx_search"></use>
+                    </svg>
+            </button>
+        </form>
+
+
+        <div class="header__switcher">
+            <span class="change_topic__item">Light</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="change_topic__item">Dark</span>
+        </div>
+
+        <div class="mobile-menu__open">
+            <button type="button" class="mobile-menu__open-btn">
+                <svg class="mobile-menu__open-icon" width="30" height="16">
+                    <use href="/src/images/svgs.svg#icon-burger_menu"></use>
+                </svg>
+            </button>
+        </div>
+
+
+<!-- мобильное меню -->
+
+        <div class="mobile-menu">
+
+            <div class="header__switcher">
+                <span class="change_topic__item">Light</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span class="change_topic__item">Dark</span>
+            </div>
+
+            <button type="button" class="mobile-menu__close-btn">
+                <svg class="mobile-menu__close-icon" width="32" height="32">
+                    <use href=""></use>
+                </svg>
+            </button>
+
+            <form class="header__form">
+                <input class="form__input" type="text" placeholder="Search">
+                <button class="form__button" type="submit">
+                    <svg class="logo__svg" width="24" height="24">
+                        <use href="/src/images/svgs.svg#icon-bx_search"></use>
+                    </svg>
+                </button>
+            </form>
+        
+            <div class="site-nav-mobile">
+                <ul class="site-nav-mobile__list list">
+                    <li class="site-nav-mobile__item"><a href="" class="site-nav-mobile__link link">Home</a></li>
+                    <li class="site-nav-mobile__item">Favorite
+                            <svg class="site-nav-mobile__arrow" width="24" height="24">
+                                <use href="./images/sprite.svg#icon-arrow-up"></use>
+                            </svg>
+                        <ul>
+                            <li class="ite-nav-mobile__favorite"><a href="" class="site-nav__link">Favorite cocktails</a></li>
+                            <li class="ite-nav-mobile__favorite"><a href="" class="site-nav__link">Favorite ingredients</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</header>
