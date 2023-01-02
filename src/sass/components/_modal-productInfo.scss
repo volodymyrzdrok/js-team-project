@@ -6,6 +6,7 @@
 //   overflow: hidden;
 // }
 .cocktails__backdrop {
+    
   position: fixed;
   display: flex;
   justify-content: center;
@@ -41,18 +42,28 @@
 }
 
 .cocktails-modal {
-  position: absolute;
-  width: 320px;
-  padding: 40px 20px;
+    position: absolute;
+    
+    
+    padding: 40px 20px;
 
-  background-color: $white-bg-color;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    @include mobile-only-media{min-width: 320px;};
+    @include mobile-media{width: 480px;};
+    @include tablet-media{
+        width: 822px;
+         padding: 40px 28px 28px;
+    };
+
+
+    
+    background-color: $white-bg-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-
-  transform: scale(1);
-  transition: transform $animation;
-  
+    opacity: 1;
+    
+    transform: scale(1);
+    transition: transform $animation;
+    
   
   &__close-btn {
       position: absolute;
@@ -87,6 +98,9 @@
         color: $secondary-dark-text-color;
         
         margin-bottom: 20px;
+                  @include tablet-media{
+margin-left: 292px;
+    };
     }
     
     &__subtitle {
@@ -103,11 +117,28 @@
     &__text-content {
         line-height: 1.75;
         margin-bottom: 32px;
+
+        &--font{
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+    }
+
+    &__text-modification {
+        color:$secondary-dark-text-color;
     }
     
     &__thumb {
-        height: 280px;
+        min-height: 280px;
         margin-bottom: 22px;
+                  
+        @include tablet-media{
+height: 320px;
+  width: 288px;
+         position: absolute;
+       top: 0;
+       left: 0;
+    };
     }
     
     &__thumb-img {
@@ -118,6 +149,7 @@
         object-fit: cover;
         
         border-radius: 4px;
+
     }
     
     &__list-title {

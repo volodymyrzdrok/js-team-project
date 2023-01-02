@@ -27,7 +27,7 @@
           <button class="cocktails-modal__main-btn">Add to favorite</button>
       </div>
     </div>
-    <script>
+    <script type="module">
         (() => {
   const refs = {
     openModalBtn: document.querySelector("[data-modal-open]"),
@@ -38,7 +38,7 @@
   refs.openModalBtn.addEventListener("click", toggleModal);
   refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function toggleModal() {
+  function toggleModal(e) {
     refs.modal.classList.toggle("is-hidden");
   }
 })();
