@@ -56,6 +56,44 @@ display: none;}
 }
 
 
+
+
+
+.checkbox{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.header-switcher {
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 44px;
+    display: flex;
+
+}
+
+.header-switcher__slider {
+    width: 40px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #fd5103;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.header-switcher__item-light {
+    color: #fd5103;
+    ;
+    font-weight: 400;
+    line-height: 1.71;
+}
+
+.header-switcher__item-dark {
+    font-weight: 400;
+    line-height: 1.71;
+}
+
 // форма
 
 .form-submit {
@@ -140,4 +178,7 @@ display: inline;}
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+
