@@ -1,8 +1,77 @@
-// body {
-//   font-family: Arial, Helvetica, sans-serif;
-//   width: 100px;
-//   overflow: hidden;
+// body.dark {
+//   //   font-family: Arial, Helvetica, sans-serif;
+//   //   width: 100px;
+//   //   overflow: hidden;
+//   background-color: rgb(96, 93, 93);
+//   color: azure;
 // }
+
+body.dark .cocktails-modal {
+  background-color: $dark-bg-color;
+
+  &__header {
+    @include tablet-media {
+      border-bottom: 1px solid $dark-bg-color;
+    }
+  }
+
+  &__btn-icon {
+    fill: $secondary-white-text-color;
+
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+      transition: fill $animation;
+    }
+  }
+
+  &__title {
+    color: inherit;
+  }
+
+  &__subtitle {
+    color: inherit;
+  }
+
+  &__text-modification {
+    color: inherit;
+  }
+
+  &__list-title {
+    color: inherit;
+  }
+
+  &__list-subtitle {
+    color: inherit;
+  }
+
+  &__list-item {
+    &::before {
+      content: '✶ ';
+      color: $secondary-white-text-color;
+    }
+
+    &:hover::before {
+      color: $accent-color;
+      transition: color $animation;
+    }
+  }
+
+  &__list-item-ingr {
+    &::before {
+      content: '✶ ';
+      color: $secondary-white-text-color;
+    }
+  }
+
+  &__main-btn {
+    &:hover {
+      box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.505));
+      background-color: $white-bg-color;
+      color: $accent-color;
+    }
+  }
+}
 
 .cocktails__backdrop {
   position: fixed;
@@ -179,11 +248,6 @@
     }
   }
 
-  &__line {
-    height: 5px;
-    background-color: $accent-color;
-  }
-
   &__text-content {
     line-height: 1.75;
     margin-bottom: 32px;
@@ -282,6 +346,15 @@
     }
   }
 
+  &__list-item-ingr {
+    line-height: 1.6;
+
+    &::before {
+      content: '✶ ';
+      color: $secondary-dark-color;
+    }
+  }
+
   &__list-link {
     color: inherit;
   }
@@ -310,6 +383,7 @@
     cursor: pointer;
 
     &:hover {
+      box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
       background-color: $orange-btn-color;
       transition: background-color $animation;
     }

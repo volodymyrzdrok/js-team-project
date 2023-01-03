@@ -1,3 +1,7 @@
+       <button open-modal>
+  Launch demo modal
+</button>
+
 <div class="cocktails__backdrop is-hidden modal">
       <div class="cocktails-modal cocktails-modal--padding">
         <button class="cocktails-modal__close-btn" type="button" data-modal-close>
@@ -33,3 +37,24 @@
           <button class="cocktails-modal__main-btn">Add to favorite</button>
       </div>
     </div>
+    <script>
+        const btnRef = document.querySelector('button[open-modal]');
+const modalRef = document.querySelector('.modal');
+const bodyRef = document.querySelector('body');
+const linkBtn = document.querySelector('.modal-ingredients')
+
+btnRef.addEventListener("click", openModal);
+
+function openModal(e) {
+    modalRef.classList.remove("is-hidden");
+    linkBtn.addEventListener('click', e => {
+  // определяем, что клик произошёл на ссылке
+  if (e.target.nodeName === 'A') {
+    // отменяем переход по ссылке
+      e.preventDefault()
+      const modal = document.querySelector(".second-modal")
+    modal.classList.remove("is-hidden");
+  }
+})
+}
+    </script>
