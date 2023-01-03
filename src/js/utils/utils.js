@@ -14,3 +14,4 @@ export const nitiflix = (typeOfAttentions, message) => {
     distance: '20px',
   });
 };
+

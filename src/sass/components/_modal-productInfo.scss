@@ -139,6 +139,8 @@ body.dark .cocktails-modal {
 
   @include tablet-media {
     width: 822px;
+    max-height: 598px;
+    overflow-y: scroll;
   }
 
   &--padding {
