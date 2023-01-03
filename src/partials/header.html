@@ -6,14 +6,13 @@
             </a>
 
         <nav class="header__nav">
-                <ul class="site-nav list">
-                    <li class="site-nav__item"><a href="/src/index.html" class="site-nav__link">Home</a></li>
-                    <li class="site-nav__item">Favorite
-                       <ul class="site-nav__favorites is-hidden nav__links">
-                           <li class="site-nav__item"><a href="" class="site-nav__link">Favorite cocktails</a></li>
-                           <li class="site-nav__item"><a href="" class="site-nav__link">Favorite ingredients</a></li>
+            <a href="/src/index.html" class="site-nav__link">Home</a>
+                    <p class="site-nav__item">Favorite
+                       <ul class="site-nav__favorites nav__links ">
+                           <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite cocktails</a></li>
+                           <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite ingredients</a></li>
                       </ul>
-                    </li>
+                    </p>
                 </ul>
         </nav>
 
@@ -29,7 +28,7 @@
         </form>
 
 
-        <div class="header-switcher">
+        <div class="header-switcher ">
             <span class="header-switcher__item-light">Light</span>
             <label class="header-switcher__switch">
                 <input type="checkbox">
@@ -49,9 +48,15 @@
 
 <!-- мобильное меню -->
 
-        <div class="mobile-menu">
+        <div class="mobile-menu is-hidden">
 
-            <div class="header-switcher">
+            
+            <div class="mobile-menu__header">
+            <a href="./index.html" class="header_logo">
+                <img src="/src/images/logo.png" alt="logo" class="logo_image">
+            </a>
+
+            <div class="mobile-menu header-switcher">
                 <span class="header-switcher__item-light">Light</span>
                 <label class="header-switcher__switch">
                     <input type="checkbox">
@@ -64,7 +69,7 @@
                 <svg class="mobile-menu__close-icon" width="32" height="32">
                     <use href="/src/images/svgs.svg#icon-close-line"></use>
                 </svg>
-            </button>
+            </button></div>
 
             <form class="form-submit">
                 <input class="form-submit__input" type="text" placeholder="Search">
@@ -82,10 +87,6 @@
                             <svg class="site-nav-mobile__arrow" width="24" height="24">
                                 <use href="/src/images/svgs.svg#icon-arrow-up"></use>
                             </svg>
-                        <ul>
-                            <li class="ite-nav-mobile__favorite"><a href="" class="site-nav__link">Favorite cocktails</a></li>
-                            <li class="ite-nav-mobile__favorite"><a href="" class="site-nav__link">Favorite ingredients</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div>
