@@ -1,12 +1,9 @@
 export function markupModalInfo(data) {
-  let valueIngredients = []
-  for (let i = 1; i <= 15; i++) {
-    const value = data.drinks[0][`strIngredient${i}`]
-    if (value !== null) {
-      valueIngredients.push(value)
-    }
-  }
 
+    const valueIngredients = Object.keys(data.drinks[0]).filter(el => 
+    el.includes('strIngredient')
+    );
+  
     const { idDrink, strDrink, strDrinkThumb, strInstructions } = data.drinks[0];
 
   return `<h3 class="cocktails-modal__title cocktails-modal__list-wrapper" data-id="${idDrink}">${strDrink}</h3>
@@ -21,7 +18,7 @@ export function markupModalInfo(data) {
           <p class="cocktails-modal__list-title">INGREDIENTS</p>
           <p class="cocktails-modal__list-subtitle">Per cocktail</p>
           <ul class="cocktails-modal__list">
-          ${valueIngredients.map(el => `<li class="cocktails-modal__list-item open-modal"><a class="cocktails-modal__list-link modal-ingredients open-modal" href="#">${el}</a></li>`).join('')}
+          ${valueIngredients.map(key => data.drinks[0][key]? `<li class="cocktails-modal__list-item open-modal"><a class="cocktails-modal__list-link modal-ingredients open-modal" href="#">${data.drinks[0][key]}</a></li>` : null).join('')}
           </ul>
           </div>
               <div class="cocktails-modal__content-second-wrapper">
