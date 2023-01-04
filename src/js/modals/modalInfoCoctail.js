@@ -7,34 +7,37 @@ import { renderElementsMarkup } from '../utils/utils';
 const divRef = document.querySelector('.cocktails-modal__inner')
 const listRef = document.querySelector('.js-product__list');
 const modalRef = document.querySelector('.modal');
+const cocktailsModal = document.querySelector('.cocktails-modal')
+const secondModal = document.querySelector(".second-modal")
 
   
 export function onClickBtnLearnMore() {
+  listRef.addEventListener("click", renderModalCard)
+}
 
-  listRef.addEventListener("click", async (e) => {
-
-    try {
-          if (e.target.classList.contains('open-modal')) {
-      modalRef.classList.toggle("is-hidden")
-    }
+async function renderModalCard(e) {
+     try {
+      openModal(e, modalRef)
       const idRef = e.target.closest('[data-id]');
-        const data = await fetchInfoProductById(idRef.dataset.id)
-        console.log(data);
+      const data = await fetchInfoProductById(idRef.dataset.id)
       renderElementsMarkup(divRef, markupModalInfo, data)
     } catch (error) {
       console.log(error);
     }
-const linkBtn = document.querySelector('.cocktails-modal__list')
-        linkBtn.addEventListener('click', e => {
-  if (e.target.nodeName === 'A') {
-      e.preventDefault()
-      const modal = document.querySelector(".second-modal")
-    modal.classList.remove("is-hidden");
-  }
-})
-  
-  })
+      cocktailsModal.addEventListener('click', closeModal)
 }
 
+function openModal(e, ref) {
+              if (e.target.classList.contains('open-modal')) {
+      ref.classList.remove("is-hidden")
+          }
+}
     
 
+function closeModal(e) {
+    if (e.target.classList.contains('close-modal')) {
+      modalRef.classList.add("is-hidden")
+             }
+    cocktailsModal.removeEventListener('click', closeModal)
+       openModal(e, secondModal)
+}
