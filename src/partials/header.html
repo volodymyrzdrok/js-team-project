@@ -51,12 +51,17 @@
         <div class="mobile-menu is-hidden">
 
             
-            <div class="mobile-menu__header">
-            <a href="./index.html" class="header_logo">
+            <a href="./index.html" class="header_logo-mobile">
                 <img src="/src/images/logo.png" alt="logo" class="logo_image">
             </a>
 
-            <div class="mobile-menu header-switcher">
+            <button type="button" class="mobile-menu__close-btn">
+                <svg class="mobile-menu__close-icon" width="32" height="32">
+                    <use href="/src/images/svgs.svg#icon-close-line"></use>
+                </svg>
+            </button>
+
+            <div class="header-switcher mobile">
                 <span class="header-switcher__item-light">Light</span>
                 <label class="header-switcher__switch">
                     <input type="checkbox">
@@ -65,29 +70,32 @@
                 <span class="header-switcher__item-dark">Dark</span>
             </div>
 
-            <button type="button" class="mobile-menu__close-btn">
-                <svg class="mobile-menu__close-icon" width="32" height="32">
-                    <use href="/src/images/svgs.svg#icon-close-line"></use>
-                </svg>
-            </button></div>
+           
 
-            <form class="form-submit">
-                <input class="form-submit__input" type="text" placeholder="Search">
+            <form class="form-submit mobile">
                 <button class="form-submit__button" type="submit">
-                    <svg class="logo__svg" width="24" height="24">
+                    <svg class="logo__svg" width="24px" height="24px">
                         <use href="/src/images/svgs.svg#icon-bx_search"></use>
                     </svg>
                 </button>
+                <div class="line"></div>
+                <input class="form-submit__input" type="text" placeholder="Search">
+            
             </form>
+
         
-            <div class="site-nav-mobile">
-                <ul class="site-nav-mobile__list list">
-                    <li class="site-nav-mobile__item"><a href="" class="site-nav-mobile__link link">Home</a></li>
-                    <li class="site-nav-mobile__item">Favorite
+            <div class="site-nav-mobile ">
+        
+                    <a href="" class="site-nav-mobile__link link">Home</a>
+                    <p class="site-nav-mobile__item">Favorite
                             <svg class="site-nav-mobile__arrow" width="24" height="24">
                                 <use href="/src/images/svgs.svg#icon-arrow-up"></use>
                             </svg>
-                    </li>
+                            <ul class="site-nav__favorites nav__links mobile">
+                                <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite cocktails</a></li>
+                                <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite ingredients</a></li>
+                            </ul>
+                    </p>
                 </ul>
             </div>
 
