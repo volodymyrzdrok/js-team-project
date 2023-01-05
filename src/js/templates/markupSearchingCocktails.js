@@ -1,6 +1,6 @@
 export function markupProductsList(arr) {
   if (arr === null) {
-    return;
+    
   }
   return arr
     .map(({ strDrink, strDrinkThumb }) => {
