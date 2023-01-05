@@ -10,13 +10,6 @@ const btnRef = document.querySelector('.js-product__list');
 const bodyRef = document.querySelector('body');
 
 
-
-
-
-
-
-
-  
 export function onClickBtnLearnMore() {
   btnRef.addEventListener("click", renderModalCard)
 }
@@ -44,7 +37,6 @@ ${markupModalInfo(data)}
             bodyRef.style.overflow = 'hidden';
             instance.element().querySelector('.cocktails-modal').addEventListener('click', modalIngredients)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
-            // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
         },
         onClose: (instance) => {
              bodyRef.style.overflow = 'auto';
@@ -54,14 +46,6 @@ ${markupModalInfo(data)}
   instance.show();
 }
 
-// function changesTextBtn(e) {
-//         if (!e.target.classList.contains('cocktails-modal__main-btn')) return;
-//     if (e.target.textContent === 'Add to favorite') {
-//         e.target.textContent = 'Remove from favorite';
-//     } else {
-//         e.target.textContent = 'Add to favorite';
-//   }
-// }
 
 async function modalIngredients(e) {
     if (!e.target.classList.contains('modal-ingredients')) return;
@@ -81,7 +65,6 @@ function openIngredientsModal(data) {
     </div>`,
     {
         onShow: (instance) => {
-            // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
       },
     }

@@ -4,7 +4,7 @@ import sprite from '../../images/svgs.svg'
 
 export function markupModalIngredients(data) {
 
-    const { strIngredient, strType, strDescription } = data.ingredients[0];
+    const { strIngredient, strType, strDescription, strABV } = data.ingredients[0];
 
     let index = 0
     
@@ -26,7 +26,7 @@ export function markupModalIngredients(data) {
           <ul class="cocktails-modal__list cocktails-modal__list--size">
             ${strType ? `<li class="cocktails-modal__list-item-ingr">Type: ${strType}</li>` : ''}
             <li class="cocktails-modal__list-item-ingr">Country of origin:	Italy</li>
-            <li class="cocktails-modal__list-item-ingr">Alcohol by volume:	20.5–28.5%</li>
+            ${strABV ? `<li class="cocktails-modal__list-item-ingr">Alcohol by volume:	${strABV}%</li>` : '' }
             <li class="cocktails-modal__list-item-ingr">Flavour:	Bitter, spicy and sweet</li>
           </ul>
           <button class="cocktails-modal__main-btn">Add to favorite</button>
