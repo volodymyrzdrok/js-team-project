@@ -13,7 +13,6 @@
                            <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite ingredients</a></li>
                       </ul>
                     </p>
-                </ul>
         </nav>
 
         <form class = "form-submit">
@@ -26,12 +25,19 @@
             <input class="form-submit__input" type="text" placeholder="Search">
             
         </form>
+        
+        <button class="signup__btn signup__btn--desktop" type="button">
+            <svg width="32px" height="32px">
+                <use href="/src/images/svgs.svg#icon-authorization"></use>
+            </svg> </button>
+
+        
 
 
         <div class="header-switcher ">
-            <span class="header-switcher__item-light">Light</span>
+            <span class="header-switcher__item-light ">Light</span>
             <label class="header-switcher__switch">
-                <input type="checkbox">
+                <input checked type="checkbox" class="header-switcher__input">
                 <span class="header-switcher__slider round"></span>
             </label>
             <span class="header-switcher__item-dark">Dark</span>
@@ -48,7 +54,7 @@
 
 <!-- мобильное меню -->
 
-        <div class="mobile-menu is-hidden">
+        <div class="mobile-menu ">
 
             
             <a href="./index.html" class="header_logo-mobile">
@@ -61,10 +67,10 @@
                 </svg>
             </button>
 
-            <div class="header-switcher mobile">
-                <span class="header-switcher__item-light">Light</span>
+            <div class="header-switcher mobile ">
+                <span class="header-switcher__item-light ">Light</span>
                 <label class="header-switcher__switch">
-                    <input type="checkbox">
+                    <input checked type="checkbox" class="header-switcher__input">
                     <span class="header-switcher__slider round"></span>
                 </label>
                 <span class="header-switcher__item-dark">Dark</span>
@@ -83,6 +89,7 @@
             
             </form>
 
+            
         
             <div class="site-nav-mobile ">
         
@@ -91,12 +98,12 @@
                             <svg class="site-nav-mobile__arrow" width="24" height="24">
                                 <use href="/src/images/svgs.svg#icon-arrow-up"></use>
                             </svg>
-                            <ul class="site-nav__favorites nav__links mobile">
+                            <ul class="site-nav__favorites nav__links mobile site-nav__favorites-mobile">
                                 <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite cocktails</a></li>
                                 <li class="site-nav__item-menu"><a href="" class="site-nav__link-menu">Favorite ingredients</a></li>
                             </ul>
                     </p>
-                </ul>
+               
             </div>
 
 
