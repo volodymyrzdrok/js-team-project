@@ -1,5 +1,6 @@
 .products {
   text-align: center;
+  padding-top: 40px;
 
   &__title {
     margin-bottom: 60px;
@@ -9,9 +10,9 @@
       font-family: 'Roboto';
       @include font($size: 32px, $line: 42px, $weight: 700);
     }
-    @media screen and(min-width:$tablet) {
+    @media screen and(min-width:$desktop) {
       font-family: 'Poppins';
-      @include font($size: 72px, $line: 48px, $weight: 700);
+      @include font($size:48px, $line: 72px, $weight: 700);
     }
   }
 
@@ -87,7 +88,16 @@
   font-family: 'Roboto';
   @include font($size: 14px, $line: 24px, $weight: 400);
   letter-spacing: 0.02em;
-  @media screen and(min-width:$tablet) {
+  transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and(min-width:400px) {
+    width: 160px;
+    height: 48px;
+  }
+  @include tablet-media {
     width: 160px;
     height: 48px;
     @include font($size: 20px, $line: 24px, $weight: 400);
@@ -109,7 +119,17 @@
   color: $accent-color;
   background: $white-bg-color;
   font-family: 'Roboto';
+  transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
   @include font($size: 14px, $line: 24px, $weight: 400);
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and(min-width:400px) {
+    width: 123px;
+    height: 48px;
+  }
   @media screen and(min-width:$tablet) {
     width: 123px;
     height: 48px;
@@ -125,5 +145,5 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  right: 20%;
+  right:10%;
 }
