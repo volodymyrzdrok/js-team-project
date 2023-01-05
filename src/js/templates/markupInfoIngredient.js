@@ -4,7 +4,7 @@ export function markupModalIngredients(data) {
 
     return `<button class="cocktails-modal__close-btn" type="button">
           <svg class="cocktails-modal__btn-icon" height="32" width="32">
-            <use href="./images/svgs.svg#close-btn"></use>
+            <use href="../../images/close-modal-btn.svg"></use>
           </svg>
         </button>
         <div class="cocktails-modal__header">

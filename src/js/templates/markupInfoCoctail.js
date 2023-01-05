@@ -25,6 +25,10 @@ export function markupModalInfo(data) {
           <p class="cocktails-modal__list-title">INGREDIENTS</p>
           <p class="cocktails-modal__list-subtitle">Per cocktail</p>
           <ul class="cocktails-modal__list">
+                  <div class="container-arrow">
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+</div>
           ${valueIngredients.map(key => data.drinks[0][key]? `<li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link modal-ingredients" href="#">${data.drinks[0][key]}</a></li>` : null).join('')}
           </ul>
           </div>

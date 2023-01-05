@@ -118,9 +118,10 @@ body.dark .cocktails-modal {
 //   }
 // }
 
-.basicLightbox {
-  overflow-x: auto;
+div.basicLightbox {
+  overflow-y: auto;
   align-items: flex-start;
+  scroll-behavior: smooth;
 
   @include tablet-media {
     align-items: center;
@@ -129,7 +130,6 @@ body.dark .cocktails-modal {
 
 .cocktails-modal {
   // position: absolute;
-
   background-color: $white-bg-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -150,6 +150,16 @@ body.dark .cocktails-modal {
     width: 822px;
     max-height: 598px;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      transform: translateX(-5px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent-color;
+      border-radius: 10px;
+    }
   }
 
   &--padding {
@@ -171,7 +181,7 @@ body.dark .cocktails-modal {
   &__header {
     @include tablet-media {
       padding: 40px 28px 0 28px;
-      border-bottom: 1px solid #c91010;
+      border-bottom: 1px solid $accent-color;
     }
   }
 
@@ -335,8 +345,19 @@ body.dark .cocktails-modal {
 
     @include tablet-media {
       height: 154px;
+      width: 200px;
       margin-bottom: 28px;
-      overflow: scroll;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+        transform: translateX(-5px);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $accent-color;
+        border-radius: 10px;
+      }
     }
   }
 
@@ -394,5 +415,66 @@ body.dark .cocktails-modal {
       display: block;
       margin-left: auto;
     }
+  }
+}
+$base: 0.6rem;
+
+.container-arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.chevron {
+  position: absolute;
+  width: $base * 2.5;
+  height: $base * 0.5;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: move-chevron 3s ease infinite;
+}
+
+.chevron:first-child {
+  animation: move-chevron 3s ease 1s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #919ba465;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translateY($base * 3.8);
+  }
+  66.6% {
+    opacity: 1;
+    transform: translateY($base * 5.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY($base * 8) scale(0.5);
   }
 }

@@ -38,7 +38,7 @@ ${markupModalInfo(data)}
              bodyRef.style.overflow = 'hidden';
             instance.element().querySelector('.cocktails-modal').addEventListener('click', modalIngredients)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
-            instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
+            // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
 
         },
         onClose: (instance) => {
@@ -49,14 +49,14 @@ ${markupModalInfo(data)}
   instance.show();
 }
 
-function changesTextBtn(e) {
-        if (!e.target.classList.contains('cocktails-modal__main-btn')) return;
-    if (e.target.textContent === 'Add to favorite') {
-        e.target.textContent = 'Remove from favorite';
-    } else {
-        e.target.textContent = 'Add to favorite';
-  }
-}
+// function changesTextBtn(e) {
+//         if (!e.target.classList.contains('cocktails-modal__main-btn')) return;
+//     if (e.target.textContent === 'Add to favorite') {
+//         e.target.textContent = 'Remove from favorite';
+//     } else {
+//         e.target.textContent = 'Add to favorite';
+//   }
+// }
 
 async function modalIngredients(e) {
 if (!e.target.classList.contains('modal-ingredients')) return;
@@ -76,7 +76,7 @@ function openIngredientsModal(data) {
     </div>`,
     {
         onShow: (instance) => {
-            instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
+            // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
       },
     }
