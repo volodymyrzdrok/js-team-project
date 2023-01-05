@@ -6,13 +6,19 @@ import {markupModalIngredients} from'../templates/markupInfoIngredient'
 import * as basicLightbox from 'basiclightbox'
 
 
-const listRef = document.querySelector('.js-product__list');
+const btnRef = document.querySelector('.js-product__list');
 const bodyRef = document.querySelector('body');
+
+
+
+
+
+
 
 
   
 export function onClickBtnLearnMore() {
-  listRef.addEventListener("click", renderModalCard)
+  btnRef.addEventListener("click", renderModalCard)
 }
 
 async function renderModalCard(e) {
@@ -35,10 +41,16 @@ ${markupModalInfo(data)}
     </div>`,
     {
         onShow: (instance) => {
-             bodyRef.style.overflow = 'hidden';
+            bodyRef.style.overflow = 'hidden';
             instance.element().querySelector('.cocktails-modal').addEventListener('click', modalIngredients)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
             // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
+  
+            // const listModalRef = instance.element().querySelector('.cocktails-modal__list')
+            // console.log('listModalRef :>> ', listModalRef.style.height = '154px');
+            // const containerRef = instance.element().querySelector('.container-arrow ')
+            // console.log('containerRef :>> ', containerRef.style.display = 'block');
+
 
         },
         onClose: (instance) => {
@@ -59,7 +71,7 @@ ${markupModalInfo(data)}
 // }
 
 async function modalIngredients(e) {
-if (!e.target.classList.contains('modal-ingredients')) return;
+    if (!e.target.classList.contains('modal-ingredients')) return;
      try {
          const name = e.target.textContent
          const data = await fetchInfoIngredientByName(name)

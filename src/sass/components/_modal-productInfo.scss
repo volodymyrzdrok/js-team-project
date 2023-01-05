@@ -336,6 +336,7 @@ div.basicLightbox {
   }
 
   &__list {
+    position: relative;
     font-size: 16px;
     line-height: 1.63;
 
@@ -350,13 +351,7 @@ div.basicLightbox {
       overflow-y: scroll;
 
       &::-webkit-scrollbar {
-        width: 3px;
-        transform: translateX(-5px);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: $accent-color;
-        border-radius: 10px;
+        display: none;
       }
     }
   }
@@ -420,7 +415,11 @@ div.basicLightbox {
 $base: 0.6rem;
 
 .container-arrow {
-  display: inline-flex;
+  // display: inline-flex;
+  display: none;
+  position: absolute;
+  left: 150px;
+  bottom: 60px;
   justify-content: center;
   align-items: center;
   width: 30px;
