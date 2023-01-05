@@ -1,3 +1,5 @@
+import sprite from '../../images/svgs.svg'
+
 
 export function markupModalInfo(data) {
 
@@ -9,7 +11,7 @@ export function markupModalInfo(data) {
 
   return `<button class="cocktails-modal__close-btn" type="button">
           <svg class="cocktails-modal__btn-icon" height="32" width="32">
-            <use href="../images/svgs.svg#close-btn"></use>
+            <use href="${sprite}#close-btn"></use>
           </svg>
         </button>
         <div class="cocktails-modal__inner">
@@ -25,17 +27,13 @@ export function markupModalInfo(data) {
           <p class="cocktails-modal__list-title">INGREDIENTS</p>
           <p class="cocktails-modal__list-subtitle">Per cocktail</p>
           <ul class="cocktails-modal__list">
-                  <div class="container-arrow">
-  <div class="chevron"></div>
-  <div class="chevron"></div>
-</div>
           ${valueIngredients.map(key => data.drinks[0][key]? `<li class="cocktails-modal__list-item"><a class="cocktails-modal__list-link modal-ingredients" href="#">${data.drinks[0][key]}</a></li>` : null).join('')}
           </ul>
+          </div>
           </div>
               <div class="cocktails-modal__content-second-wrapper">
         <p class="cocktails-modal__subtitle">Instractions:</p>
         <p class="cocktails-modal__text-content">${strInstructions}</p>
-          </div>
            </div>
           <button class="cocktails-modal__main-btn">Add to favorite</button>`
     

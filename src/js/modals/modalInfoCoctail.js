@@ -45,13 +45,6 @@ ${markupModalInfo(data)}
             instance.element().querySelector('.cocktails-modal').addEventListener('click', modalIngredients)
             instance.element().querySelector('.cocktails-modal__close-btn').addEventListener('click', instance.close)
             // instance.element().querySelector('.cocktails-modal').addEventListener('click', changesTextBtn)
-  
-            // const listModalRef = instance.element().querySelector('.cocktails-modal__list')
-            // console.log('listModalRef :>> ', listModalRef.style.height = '154px');
-            // const containerRef = instance.element().querySelector('.container-arrow ')
-            // console.log('containerRef :>> ', containerRef.style.display = 'block');
-
-
         },
         onClose: (instance) => {
              bodyRef.style.overflow = 'auto';
