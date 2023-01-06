@@ -1,3 +1,5 @@
+import svgHeart from '../../images/svgs.svg';
+
 export function markupProductsList(arr) {
   return arr
     .map(({ strDrink, strDrinkThumb }) => {
@@ -16,7 +18,7 @@ export function markupProductsList(arr) {
             <button type="button" class="btn__add">
               Add to
               <svg class="btn__svg" width="18" height="18">
-                <use href="./images/svgs.svg#heart"></use>
+                <use href="${svgHeart}#heart"></use>
               </svg>
             </button>
           </div>
