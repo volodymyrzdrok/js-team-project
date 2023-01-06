@@ -47,7 +47,6 @@
   margin-right: auto;
   margin-bottom: 20px;
   opacity: 0.8;
-  text-align:center;
   color: $secondary-dark-text-color;
 
   @media screen and (min-width: $mobile) {
@@ -175,31 +174,23 @@
   gap: 1px;
 }
 
-details {
-  position: relative;
+.keyboard__cstm-select {
   width: 300px;
-  margin-right: 1rem;
-
-  @media screen and (min-width: $tablet) {
-      display: none;
-  }
-}
-
-.cstm-select {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
   @media screen and (min-width: $tablet) {
-      margin-left: 0;
+      display: none;
   }
 
 }
 
-details[open] {
+.keyboard__cstm-select[open] {
   z-index: 1;
 }
 
-summary {
+.keyboard__cstm-summary  {
   width: 93px;
   height: 34px;
   margin-right: auto;
@@ -215,11 +206,12 @@ summary {
   list-style: none;
 }
 
-summary::-webkit-details-marker {
+.keyboard__cstm-summary::-webkit-details-marker {
   display: none;
 }
 
-details[open] summary:before {
+.keyboard__cstm-select[open] 
+.keyboard__cstm-summary:before  {
   content: '';
   display: block;
   width: 100vw;
@@ -229,7 +221,8 @@ details[open] summary:before {
   top: 0;
   left: 0;
 }
-summary:after {
+
+.keyboard__cstm-summary:after  {
   content: '';
   display: block;
   width: 9px;
@@ -247,38 +240,39 @@ summary:after {
 }
 
 
-summary:focus {
+.keyboard__cstm-summary:focus   {
   outline: none;
   // background-color:$accent-color;
   // color:$secondary-white-text-color;
   //колір 
 }
 
+
 .select-item {
   margin: 0;
 }
 /* FAKE SELECT */
 
-summary.radios {
+.keyboard__cstm-summary.radios  {
   counter-reset: radios;
 }
 
-summary.radios:before {
+.keyboard__cstm-summary.radios:before  {
   content: var(--selection);
 }
 
-input[type='radio'] {
+.keyboard__cstm-input[type='radio']   {
   counter-increment: radios;
   appearance: none;
   display: none;
 }
 
-input[type='radio']:checked {
+.keyboard__cstm-input[type='radio']:checked {
   display: inline;
   display: block;
 }
 
-input[type='radio']:after {
+.keyboard__cstm-input[type='radio']:after  {
   content: attr(title);
   padding-left: 7px;
   display: block;
@@ -289,7 +283,7 @@ input[type='radio']:after {
   // color:$secondary-white-text-color;
 }
 
-.select-list {
+.keyboard__cstm-select_list {
   counter-reset: labels;
   width: 93px;
   height: 84px;
@@ -307,7 +301,7 @@ input[type='radio']:after {
   list-style: none;
 }
 
-label {
+.keyboard__cstm-select_label {
   font-weight: 700;
   width: 100%;
   padding: 7px 10px;
@@ -318,13 +312,15 @@ label {
   color: $primary-dark-text-color;
 }
 
-.select-list::-webkit-scrollbar {
+.keyboard__cstm-select_list::-webkit-scrollbar {
   width: 8px;
 }
 
-.select-list::-webkit-scrollbar-thumb {
+.keyboard__cstm-select_list::-webkit-scrollbar-thumb {
   background: $primary-dark-text-color;
   border-radius: 5px;
   border: 3px solid $white-bg-color ;
 }
+
+
 
