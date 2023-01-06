@@ -1,1 +1,6 @@
-export const refs = {};
+export const refs = {
+    authButton: document.querySelector(".auth-button")
+};
+
+
+
