@@ -1,7 +1,4 @@
 export function markupProductsList(arr) {
-  if (arr === null) {
-    
-  }
   return arr
     .map(({ strDrink, strDrinkThumb }) => {
       return `<li class="products__item">
