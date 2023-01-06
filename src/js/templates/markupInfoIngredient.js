@@ -1,8 +1,12 @@
+import {Notify} from 'notiflix';
 import sprite from '../../images/svgs.svg'
 
 
-
 export function markupModalIngredients(data) {
+
+  if (!data) {
+    Notify.failure('Sorry, but there is no information for this ingredient')
+  }
 
     const { strIngredient, strType, strDescription, strABV } = data.ingredients[0];
 
