@@ -1,6 +1,7 @@
 export const refs = {
-    authButton: document.querySelector(".auth-button")
+  productList: document.querySelector('.js-product__list'),
+  searchCocktailsInput: document.querySelectorAll('.form-submit'),
+  lettersContainer: document.querySelector('.hero__keyboard'),
+  productTitle: document.querySelector('.products__title'),
+  authButton: document.querySelector(".auth-button")
 };
-
-
-

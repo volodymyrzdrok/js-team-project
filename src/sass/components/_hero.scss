@@ -1,0 +1,326 @@
+.hero {
+  width: 100%;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__title {
+  max-width: 688px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.91;
+  margin-bottom: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $accent-color;
+  width: 300px;
+
+  @media screen and (min-width: $mobile) {
+      width: 300px;
+  }
+
+  @media screen and (min-width: $tablet) {
+      width: 336px;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.62;
+      margin-bottom: 40px;
+      margin-left: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+      width: 688px;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 1.54;
+  }
+}
+
+.hero__txt {
+  max-width: 607px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  color: $secondary-dark-text-color;
+
+  @media screen and (min-width: $mobile) {
+      width: 280px;
+  }
+
+  @media screen and (min-width: $tablet) {
+      width: 324px;
+      margin-bottom: 40px;
+      margin-left: 0;
+      color: inherit;
+  }
+
+  @media screen and (min-width: $desktop) {
+      width: 607px;
+      font-size: 18px;
+      line-height: 1.56;
+  }
+}
+
+.hero__keyboard {
+  position: relative;
+
+  @media screen and (min-width: $tablet) {
+      padding-top: 102px;
+      padding-bottom: 164px;
+  }
+
+  @media screen and (min-width: $desktop) {
+      padding-top: 67px;
+  }
+
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 30px;
+
+  @media screen and (min-width: $tablet) {
+      padding-top: 102px;
+      padding-bottom: 164px;
+  }
+
+  @media screen and (min-width: $desktop) {
+      padding-top: 67px;
+  }
+}
+
+.hero__img {
+  margin-bottom: 28px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $tablet) {
+      position: absolute;
+      top: 77;
+      right: 0;
+      z-index: 5;
+  }
+
+  @media screen and (min-width: $desktop) {
+      top: 7px;
+      right: 0;
+  }
+}
+
+.keyboard__list {
+  display: none;
+  @media screen and (min-width: $tablet) {
+      display: inline-block;
+  }
+  .keyboard__list {
+      @media screen and (min-width: $tablet) {
+          display: inline-block;
+      }
+  }
+  .keyboard--item {
+      @media screen and (min-width: $tablet) {
+          width: 24px;
+          height: 25px;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 1.5;
+          align-items: center;
+          text-align: center;
+      }
+      @media screen and (min-width: $desktop) {
+          width: 40px;
+          height: 40px;
+          font-weight: 700;
+          font-size: 24px;
+      }
+
+      color:$primary-dark-text-color;
+  }
+
+  @media screen and (min-width: $desktop) {
+      font-weight: 700;
+      font-size: 24px;
+  }
+}
+.keyboard--itemletter{
+  color: $primary-dark-text-color;
+  cursor: pointer;
+  transition:$animation;
+}
+
+.keyboard--itemletter:hover,
+.keyboard--itemletter:focus,
+.keyboard--itemletter:active{
+  color: $accent-color;
+  text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
+  -webkit-text-stroke: 1px $primary-dark-text-color;
+}
+
+.first--line,
+.second--line,
+.third--line {
+  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1px;
+}
+
+.keyboard__cstm-select {
+  width: 300px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @media screen and (min-width: $tablet) {
+      display: none;
+  }
+
+}
+
+.keyboard__cstm-select[open] {
+  z-index: 1;
+}
+
+.keyboard__cstm-summary  {
+  width: 93px;
+  height: 34px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  background-color: transparent;
+  list-style: none;
+}
+
+.keyboard__cstm-summary::-webkit-details-marker {
+  display: none;
+}
+
+.keyboard__cstm-select[open] 
+.keyboard__cstm-summary:before  {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.keyboard__cstm-summary:after  {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-bottom: 1px solid $accent-color;
+  border-left: 1px solid $accent-color;
+// border-bottom: 1px solid $secondary-white-text-color;
+// border-left: 1px solid $secondary-white-text-color;
+  border-bottom-left-radius: 2px;
+  transform: rotate(-45deg) translate(50%, 0%);
+  margin-top: 15px;
+  margin-bottom: 13px;
+  margin-right: 16px;
+  margin-left: 14px;
+}
+
+
+.keyboard__cstm-summary:focus   {
+  outline: none;
+  // background-color:$accent-color;
+  // color:$secondary-white-text-color;
+  //колір 
+}
+
+
+.select-item {
+  margin: 0;
+}
+/* FAKE SELECT */
+
+.keyboard__cstm-summary.radios  {
+  counter-reset: radios;
+}
+
+.keyboard__cstm-summary.radios:before  {
+  content: var(--selection);
+}
+
+.keyboard__cstm-input[type='radio']   {
+  counter-increment: radios;
+  appearance: none;
+  display: none;
+}
+
+.keyboard__cstm-input[type='radio']:checked {
+  display: inline;
+  display: block;
+}
+
+.keyboard__cstm-input[type='radio']:after  {
+  content: attr(title);
+  padding-left: 7px;
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  color: $accent-color;
+  // color:$secondary-white-text-color;
+  // color:$secondary-white-text-color;
+}
+
+.keyboard__cstm-select_list {
+  counter-reset: labels;
+  width: 93px;
+  height: 84px;
+  background: $white-bg-color;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0;
+  margin: 0;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.keyboard__cstm-select_label {
+  font-weight: 700;
+  width: 100%;
+  padding: 7px 10px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  font-size: 10px;
+  color: $primary-dark-text-color;
+}
+
+.keyboard__cstm-select_list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.keyboard__cstm-select_list::-webkit-scrollbar-thumb {
+  background: $primary-dark-text-color;
+  border-radius: 5px;
+  border: 3px solid $white-bg-color ;
+}
+
+
+
