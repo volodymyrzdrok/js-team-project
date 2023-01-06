@@ -171,6 +171,8 @@ button {
 .form-submit__input {
   max-width: 247px;
   border: none;
+  background-color: #fcfcfc;
+  transition-duration: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-submit__button {
   padding: 0%;
@@ -220,6 +222,7 @@ input::placeholder {
   padding: 0;
   line-height: 0;
   display: block;
+  transition-duration: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu {
@@ -238,6 +241,7 @@ input::placeholder {
   display: flex;
   width: 100%;
   height: 100%;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu.is-open {
   opacity: 1;
@@ -292,7 +296,16 @@ input::placeholder {
 
 .site-nav__item-menu {
   padding: 15px;
+}
+
+.site-nav__link-menu {
   color: #000000;
+}
+
+.site-nav-mobile {
+  flex-direction: column;
+  display: flex;
+  position: relative;
 }
 
 @media screen and (max-width: 745px) {
@@ -449,6 +462,7 @@ input::placeholder {
   .site-nav__link {
     color: #202025;
     font-size: 18px;
+    transition-duration: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .site-nav__favorites {
     visibility: hidden;
@@ -462,6 +476,7 @@ input::placeholder {
   .site-nav__item {
     cursor: pointer;
     font-size: 18px;
+    transition-duration: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .site-nav__link:hover {
     color: #fd5103;
@@ -490,8 +505,7 @@ input::placeholder {
     font-size: 18px;
     font-weight: 400;
     line-height: 1.33;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .site-nav__item-menu:hover {
     background-color: #fd5103;
