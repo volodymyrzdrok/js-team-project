@@ -20,7 +20,7 @@ export async function getCocktailsByName(e) {
 
 function onResolve(drinks) {
   const { productTitle, productList } = refs;
-
+  scrollSmoth('.js-product__list');
   if (!drinks) {
     productTitle.textContent = "Sorry, we didn't find any cocktail for you";
     productList.innerHTML = imgNotFound;
@@ -28,5 +28,4 @@ function onResolve(drinks) {
   }
   productTitle.textContent = 'Searching results';
   renderElementsMarkup(productList, markupProductsList, drinks);
-  scrollSmoth('.js-product__list');
 }
