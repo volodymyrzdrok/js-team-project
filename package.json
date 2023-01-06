@@ -21,16 +21,17 @@
     "animate.css": "^4.1.1",
     "axios": "^1.2.1",
     "basiclightbox": "^5.0.4",
+    "css-loader": "^6.7.1",
+    "firebase": "^9.13.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5",
-    "simplelightbox": "^2.11.0",
-    "firebase": "^9.13.0",
-    "css-loader": "^6.7.1"
+    "simplelightbox": "^2.11.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
