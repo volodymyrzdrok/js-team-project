@@ -2,7 +2,7 @@ import { fetchProductsByName } from '../api/api';
 import { refs } from '../refs/refs';
 import { imgNotFound } from '../templates/markupImages';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
-import { onReject, renderElementsMarkup } from '../utils/utils';
+import { onReject, renderElementsMarkup, scrollSmoth } from '../utils/utils';
 
 export async function getCocktailsByName(e) {
   e.preventDefault();
@@ -28,4 +28,5 @@ function onResolve(drinks) {
   }
   productTitle.textContent = 'Searching results';
   renderElementsMarkup(productList, markupProductsList, drinks);
+  scrollSmoth('.js-product__list');
 }
