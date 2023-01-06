@@ -1,0 +1,153 @@
+.products {
+  text-align: center;
+  padding-top: 40px;
+
+  &__title {
+    margin-bottom: 60px;
+    color: $secondary-dark-text-color;
+    @include font($size: 22px, $line: 42px, $weight: 600);
+    @media screen and(min-width:$tablet) {
+      font-family: 'Roboto';
+      @include font($size: 32px, $line: 42px, $weight: 700);
+    }
+    @media screen and(min-width:$desktop) {
+      font-family: 'Poppins';
+      @include font($size:48px, $line: 72px, $weight: 700);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 60px;
+    @media screen and(min-width:$tablet) {
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    border: 1px solid $accent-color;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @media screen and(min-width:$tablet) {
+      width: calc((100% - 32px) / 2);
+    }
+    @media screen and(min-width:$desktop) {
+      width: calc((100% - 64px) / 3);
+    }
+  }
+
+  &__img {
+    margin-bottom: 48px;
+    width: 100%;
+    object-fit: cover;
+    @media screen and(min-width:$tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 16px;
+    color: $secondary-dark-text-color;
+    font-family: 'Roboto';
+    @include font($size: 26px, $line: 42px, $weight: 900);
+  }
+  @media screen and(min-width:$tablet) {
+    margin-bottom: 23px;
+    @include font($size: 28px, $line: 33px, $weight: 900);
+  }
+  @media screen and(min-width:$desktop) {
+    margin-bottom: 27px;
+    @include font($size: 32px, $line: 38px, $weight: 900);
+  }
+
+  &__card-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 24px;
+  }
+  @media screen and(min-width:$tablet) {
+    margin-bottom: 20px;
+  }
+  @media screen and(min-width:$desktop) {
+    margin-bottom: 28px;
+  }
+}
+
+.btn__learn {
+  @include centeredFlex($jusCon: center, $aliIte: center);
+  color: $secondary-white-text-color;
+  min-width: 108px;
+  min-height: 39px;
+  border: none;
+  background-color: $orange-btn-color;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  @include font($size: 14px, $line: 24px, $weight: 400);
+  letter-spacing: 0.02em;
+  transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and(min-width:400px) {
+    width: 160px;
+    height: 48px;
+  }
+  @include tablet-media {
+    width: 160px;
+    height: 48px;
+    @include font($size: 20px, $line: 24px, $weight: 400);
+  }
+  @media screen and(min-width:$desktop) {
+    width: 182px;
+    height: 48px;
+  }
+}
+.btn__add {
+  position: relative;
+  @include centeredFlex($jusCon: start, $aliIte: center);
+  padding-left: 16px;
+  min-width: 108px;
+  min-height: 39px;
+  text-align: start;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  color: $accent-color;
+  background: $white-bg-color;
+  font-family: 'Roboto';
+  transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include font($size: 14px, $line: 24px, $weight: 400);
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and(min-width:400px) {
+    width: 123px;
+    height: 48px;
+  }
+  @media screen and(min-width:$tablet) {
+    width: 123px;
+    height: 48px;
+    @include font($size: 20px, $line: 24px, $weight: 400);
+  }
+  @media screen and(min-width:$desktop) {
+    width: 141px;
+    height: 48px;
+  }
+}
+
+.btn__svg {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right:10%;
+}
+
+.not-found{
+  margin: 0 auto;
+}

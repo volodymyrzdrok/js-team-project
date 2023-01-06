@@ -12,7 +12,7 @@ export const fetchProductsByName = async name => {
 
 export const fetchProductsRandom = async () => {
   try {
-    const { data } = await axios.get(`${BASE_URL}search.php?f=e`);
+    const { data } = await axios.get(`${BASE_URL}random.php`);
     return data;
   } catch (error) {
     throw new Error(error);
