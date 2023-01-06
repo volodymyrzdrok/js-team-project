@@ -331,7 +331,9 @@ position: relative;}
 
 
 @media screen and (min-width: $tablet) {
-
+.mobile-menu {
+        width: 100vw;
+            height: 100vh;}
 .logo_image {
     height: 43px;
     width: 156px;
