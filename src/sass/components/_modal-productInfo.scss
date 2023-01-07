@@ -1,0 +1,393 @@
+body.dark .cocktails-modal {
+  background-color: $dark-bg-color;
+
+  &__header {
+    @include tablet-media {
+      border-bottom: 1px solid $dark-bg-color;
+    }
+  }
+
+  &__btn-icon {
+    fill: $secondary-white-text-color;
+
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+      transition: fill $animation;
+    }
+  }
+
+  &__title {
+    color: inherit;
+  }
+
+  &__subtitle {
+    color: inherit;
+  }
+
+  &__text-modification {
+    color: inherit;
+  }
+
+  &__list-title {
+    color: inherit;
+  }
+
+  &__list-subtitle {
+    color: inherit;
+  }
+
+  &__list-item {
+    &::before {
+      content: '✶ ';
+      color: $secondary-white-text-color;
+    }
+
+    &:hover::before {
+      color: $accent-color;
+      transition: color $animation;
+    }
+  }
+
+  &__list-item-ingr {
+    &::before {
+      content: '✶ ';
+      color: $secondary-white-text-color;
+    }
+  }
+
+  &__main-btn {
+    &:hover {
+      box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.505));
+      background-color: $white-bg-color;
+      color: $accent-color;
+    }
+  }
+}
+
+div.basicLightbox {
+  overflow-y: auto;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+
+  @include tablet-media {
+    align-items: center;
+  }
+}
+
+.cocktails-modal {
+  // position: absolute;
+  background-color: $white-bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transform: scale(1);
+  transition: transform $animation;
+
+  @include mobile-only-media {
+    min-width: 320px;
+  }
+
+  @include mobile-media {
+    width: 480px;
+  }
+
+  @include tablet-media {
+    width: 822px;
+    // max-height: 598px;
+    // overflow-y: scroll;
+
+    // &::-webkit-scrollbar {
+    //   width: 3px;
+    //   transform: translateX(-5px);
+    // }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: $accent-color;
+    //   border-radius: 10px;
+    // }
+  }
+
+  &--padding {
+    @include tablet-media {
+      padding: 40px 38.5px 28px;
+    }
+  }
+
+  &--size {
+    @include tablet-media {
+      width: 715px;
+    }
+  }
+
+  @media screen and (max-width: $to-tablet) {
+    padding: 40px 20px;
+  }
+
+  &__header {
+    @include tablet-media {
+      padding: 40px 28px 0 28px;
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+
+  &__body {
+    @include tablet-media {
+      padding: 28px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    border: transparent;
+
+    cursor: pointer;
+
+    @include tablet-media {
+      top: 22px;
+      right: 35px;
+    }
+  }
+
+  &__btn-icon {
+    fill: $dark-bg-color;
+
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+      transition: fill $animation;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.2;
+
+    color: $secondary-dark-text-color;
+
+    margin-bottom: 20px;
+    @include tablet-media {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__content-wrapper {
+    @include tablet-media {
+      display: none;
+    }
+  }
+
+  &__content-second-wrapper {
+    display: none;
+    @include tablet-media {
+      display: block;
+    }
+  }
+
+  &__list-wrapper {
+    @include tablet-media {
+      margin-left: 281.5px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    line-height: 1.63;
+
+    margin-bottom: 20px;
+
+    color: $secondary-dark-text-color;
+
+    text-transform: uppercase;
+
+    @include tablet-media {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__text-content {
+    line-height: 1.75;
+    margin-bottom: 32px;
+
+    @include tablet-media {
+      margin-bottom: 40px;
+      padding-right: 5px;
+      width: 615px;
+      height: 90px;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+        transform: translateX(-5px);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $accent-color;
+        border-radius: 10px;
+      }
+    }
+
+    &--font {
+      margin-bottom: 28px;
+
+      @include tablet-media {
+        margin-bottom: 28px;
+        padding-right: 5px;
+        width: 100%;
+        height: 140px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 3px;
+          transform: translateX(-5px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $accent-color;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &__text-modification {
+    color: $secondary-dark-text-color;
+    font-weight: 600;
+  }
+
+  &__thumb {
+    min-height: 280px;
+    margin-bottom: 22px;
+
+    @include tablet-media {
+      height: 320px;
+      width: 288px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__thumb-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+  }
+
+  &__list-title {
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: $secondary-dark-color;
+
+    margin-bottom: 8px;
+  }
+
+  &__list-subtitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: $secondary-dark-text-color;
+
+    margin-bottom: 8px;
+  }
+
+  &__list {
+    font-size: 16px;
+    line-height: 1.63;
+
+    margin-bottom: 32px;
+
+    list-style: none;
+
+    @include tablet-media {
+      height: 154px;
+      width: 210px;
+      margin-bottom: 28px;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+        transform: translateX(-5px);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $accent-color;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__list--size {
+    @include tablet-media {
+      height: 100%;
+      width: 100%;
+      margin-bottom: 40px;
+      overflow: visible;
+    }
+  }
+
+  &__list-item,
+  &__list-item-ingr {
+    line-height: 1.6;
+
+    &::before {
+      content: '✶ ';
+      color: $secondary-dark-color;
+    }
+  }
+
+  &__list-link {
+    color: inherit;
+  }
+
+  &__list-item:hover::before,
+  &__list-item:hover {
+    color: $accent-color;
+    transition: color $animation;
+  }
+
+  &__main-btn {
+    padding: 12px 24px;
+
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+
+    background-color: $accent-color;
+    color: $secondary-white-text-color;
+
+    border-radius: 4px;
+    border: transparent;
+
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+      background-color: $orange-btn-color;
+      transition: background-color $animation;
+    }
+
+    @include tablet-media {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}

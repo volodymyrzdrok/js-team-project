@@ -3,4 +3,5 @@ export const refs = {
   searchCocktailsInput: document.querySelectorAll('.form-submit'),
   lettersContainer: document.querySelector('.hero__keyboard'),
   productTitle: document.querySelector('.products__title'),
+  bodyRef: document.querySelector('body'),
 };
