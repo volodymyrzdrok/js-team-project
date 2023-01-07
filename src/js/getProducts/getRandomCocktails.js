@@ -2,8 +2,6 @@ import { refs } from '../refs/refs';
 import { fetchProductsRandom } from '../api/api';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { renderElementsMarkup } from '../utils/utils';
-import { onClickBtnLearnMore } from '../modals/modalInfoCoctail';
-
 
 let amountCocktails = 3;
 const clientWidth = document.documentElement.clientWidth;
@@ -26,5 +24,4 @@ export async function getRandomCocktails() {
   }
 
   renderElementsMarkup(refs.productList, markupProductsList, randomCocktails);
-  onClickBtnLearnMore()
 }

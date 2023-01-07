@@ -1,6 +1,6 @@
 import img from '../../images/not-found-img/Not-found.png';
 
-export const imgNotFound = `<picture>
+export const imgNotFound = `<picture class="products__notFoundImage">
                 <source
                   srcset="${img}"
                   media="(min-width: 1200px)"
