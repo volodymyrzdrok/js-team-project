@@ -1,7 +1,7 @@
 import { fetchInfoIngredientByName } from '../api/api';
 import { markupModalIngredients } from '../templates/markupInfoIngredient';
 import * as basicLightbox from 'basiclightbox';
-import { changeIngredientsInLocalStorage } from '../localStorage/getIngredientsInLocalStorage';
+import { changeProductsInModalLocStorage } from '../localStorage/getProductsInLocalStorage';
 
 export async function modalIngredients(e) {
   const elIngred = e.target.closest('.modal-ingredients');
@@ -9,7 +9,7 @@ export async function modalIngredients(e) {
 
   if (!elIngred && !elBtnToStorageInModal) return;
   if (elBtnToStorageInModal) {
-    changeIngredientsInLocalStorage(elBtnToStorageInModal);
+    changeProductsInModalLocStorage(elBtnToStorageInModal);
     return;
   }
 
