@@ -3,12 +3,19 @@ import { fetchInfoProductById } from '../api/api';
 import { markupModalInfo } from '../templates/markupInfoCoctail';
 import * as basicLightbox from 'basiclightbox';
 import { modalIngredients } from './ modalInfoIngredient';
+import { changeProductInLocalStorage } from '../localStorage/getProductsInLocalStorage';
 
 export async function renderModalCard(e) {
   const elBtnLearn = e.target.closest('.products__card-btns--learn');
-  if (!elBtnLearn) return;
+  const elBtnToStorage = e.target.closest('.products__card-btns--add');
 
-  const cocktailId = elBtnLearn.dataset.idbtn;
+  if (!elBtnLearn && !elBtnToStorage) return;
+  if (elBtnToStorage) {
+    changeProductInLocalStorage(elBtnToStorage);
+    return;
+  }
+
+  const cocktailId = elBtnLearn.dataset.idbtnlearn;
 
   try {
     const data = await fetchInfoProductById(cocktailId);

@@ -1,4 +1,5 @@
 import img from '../../images/not-found-img/Not-found.png';
+import sprite from '../../images/svgs.svg';
 
 export const imgNotFound = `<picture class="products__notFoundImage">
                 <source
@@ -21,3 +22,6 @@ export const imgNotFound = `<picture class="products__notFoundImage">
                   alt="cafe"
                 />
               </picture>`;
+
+export const svgHeart = `  <svg class="btn__svg" width="18" height="18"> <use href="${sprite}#heart"></use> </svg>`;
+export const svgHeartFull = `  <svg class="btn__svg" width="18" height="18"> <use href="${sprite}#heart-full"></use> </svg>`;

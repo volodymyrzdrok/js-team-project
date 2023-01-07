@@ -107,7 +107,7 @@
     height: 48px;
   }
 }
-.btn__add {
+.products__card-btns--add {
   position: relative;
   @include centeredFlex($jusCon: start, $aliIte: center);
   padding-left: 16px;

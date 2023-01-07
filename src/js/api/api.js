@@ -45,3 +45,12 @@ export const fetchInfoIngredientByName = async name => {
     throw new Error(error);
   }
 };
+
+export const fetchInfoIngredientById = async id => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}lookup.php?iid=${id}`);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
