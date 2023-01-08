@@ -2,6 +2,7 @@ import { fetchInfoIngredientByName } from '../api/api';
 import { markupModalIngredients } from '../templates/markupInfoIngredient';
 import * as basicLightbox from 'basiclightbox';
 import { changeProductsInModalLocStorage } from '../localStorage/getProductsInLocalStorage';
+import { getIngredientsInLocalStorage } from '../localStorage/getIngredientsInLocalStorage';
 
 export async function modalIngredients(e) {
   const elIngred = e.target.closest('.modal-ingredients');
@@ -26,6 +27,10 @@ function openIngredientsModal(data) {
   const instance = basicLightbox.create(markupModalIngredients(data), {
     onShow: instance => {
       const elInModal = instance.element();
+
+      elInModal
+        .querySelector('.cocktails-modal__main-btn')
+        .addEventListener('click', getIngredientsInLocalStorage);
 
       elInModal
         .querySelector('.cocktails-modal__close-btn')

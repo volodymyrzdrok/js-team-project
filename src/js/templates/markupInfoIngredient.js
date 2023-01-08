@@ -1,14 +1,20 @@
 import { Notify } from 'notiflix';
 import sprite from '../../images/svgs.svg';
+import { getDataLocalStorage } from '../api/localStorageApi';
+import { FAV_INGREDIENTS } from '../utils/constans';
 
 export function markupModalIngredients(data) {
+  const favoriteIngredients = getDataLocalStorage(FAV_INGREDIENTS);
+
   if (!data) {
     Notify.failure('Sorry, but there is no information for this ingredient');
   }
 
-  const { strIngredient, strType, strDescription, strABV } =
+  const { idIngredient, strIngredient, strType, strDescription, strABV } =
     data.ingredients[0];
-
+  const foundEl = favoriteIngredients.find(
+    el => el.idIngredient === idIngredient
+  );
   let index = 0;
 
   if (strDescription) {
@@ -47,6 +53,23 @@ export function markupModalIngredients(data) {
             }
             <li class="cocktails-modal__list-item-ingr">Flavour:	Bitter, spicy and sweet</li>
           </ul>
-          <button class="cocktails-modal__main-btn">Add to favorite</button>
+        <button
+  class="cocktails-modal__main-btn"
+  data-idingr="${idIngredient}"
+  data-action=${!foundEl ? 'add' : 'remove'}
+>
+  ${!foundEl ? 'Add to favorite' : 'Remove from favorite'}
+</button>
           </div>   </div>`;
 }
+
+// export const btnAddIngredInModal = (action, id) =>
+//   `<button
+//   class="cocktails-modal__main-btn"
+//   data-idingr="${id}"
+//   data-action=${action}
+// >
+//   ${action === 'add' ? 'Add to favorite' : 'Remove from favorite'}
+// </button>`;
+
+// ${btnAddIngredInModal(!foundEl ? 'add' : 'remove', idIngredient)}
