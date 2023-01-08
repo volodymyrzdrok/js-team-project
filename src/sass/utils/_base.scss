@@ -43,7 +43,6 @@ button {
 .container {
   margin: 0 auto;
   padding: 0 20px;
-  outline: 1px solid orange;
 
   @include mobile-only-media {
     max-width: $to-mobile;
