@@ -3,6 +3,7 @@ import { refs } from '../refs/refs';
 import { FAV_COCKTAILS } from '../utils/constans';
 import { renderElementsMarkup, onReject } from '../utils/utils';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
+import { favMessage } from '../templates/markupIngredients';
 
 export async function getFavCocktails() {
   console.log('cock-fav ---> ', await getDataLocalStorage(FAV_COCKTAILS));
@@ -19,7 +20,9 @@ function onResolve(drinksArr) {
   const { productList } = refs;
 
   if (drinksArr.length === 0) {
-    productList.innerHTML = 'зррботи елемент нема ніфіга(поміряти фюпорт)';
+    productList.innerHTML = favMessage(
+      `You haven't added any favorite cocktails yet`
+    );
     return;
   }
 

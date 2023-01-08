@@ -17,3 +17,7 @@ ${svgHeartFull}
     })
     .join('');
 }
+
+export const favMessage = message => `<div class="fav-notFound__box">
+  <p class="fav-notFound__message">${message}</p>
+</div>`;

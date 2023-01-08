@@ -3,7 +3,7 @@ import { refs } from '../refs/refs';
 import { FAV_INGREDIENTS } from '../utils/constans';
 import { renderElementsMarkup, onReject } from '../utils/utils';
 
-import { markupIngredients } from '../templates/markupIngredients';
+import { favMessage, markupIngredients } from '../templates/markupIngredients';
 
 export async function getFavorIngredinents() {
   console.log('ingred-fav ---> ', await getDataLocalStorage(FAV_INGREDIENTS));
@@ -21,7 +21,9 @@ function onResolve(ingredArr) {
   const { ingredList } = refs;
 
   if (ingredArr.length === 0) {
-    ingredList.innerHTML = 'зррботи елемент нема ніфіга(поміряти фюпорт)';
+    ingredList.innerHTML = favMessage(
+      `You haven't added any favorite ingridients yet`
+    );
     return;
   }
 

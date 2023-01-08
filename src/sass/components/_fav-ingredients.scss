@@ -77,3 +77,24 @@
     margin-bottom: 28px;
   }
 }
+
+.fav-notFound__box {
+  min-height: calc(100vh - 424px);
+  margin: 0 auto;
+}
+
+.fav-notFound__message {
+  font-family: 'Poppins';
+
+  width: 240px;
+  @include font(20px, 60px, 400);
+
+  @include tablet-media {
+    @include font(24px, 60px, 400);
+    width: 296px;
+  }
+  @include desktop-media {
+    width: 385px;
+    @include font(32px, 72px, 400);
+  }
+}
