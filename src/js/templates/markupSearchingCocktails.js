@@ -9,7 +9,7 @@ export function markupProductsList(arr) {
     .map(({ idDrink, strDrink, strDrinkThumb }) => {
       const foundEl = favoriteCocktails.find(el => el.idDrink === idDrink);
 
-      return `<li class="products__item">
+      return `<li class="products__item" data-idproduct="${idDrink}">
         <img
           class="products__img"
           src="${strDrinkThumb}"

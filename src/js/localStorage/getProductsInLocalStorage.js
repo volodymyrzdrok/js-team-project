@@ -6,7 +6,7 @@ import {
 import { refs } from '../refs/refs';
 import { btnAddInProductCard } from '../templates/markupSearchingCocktails';
 import { btnAddCocktailInMOdal } from '../templates/markupInfoCoctail';
-import { FAV_COCKTAILS } from '../utils/constans';
+import { checkFavCocktailsIndexFile, FAV_COCKTAILS } from '../utils/constans';
 
 export async function getProductsInLocalStorage(idProduct) {
   const productsFromStorage = getDataLocalStorage(FAV_COCKTAILS);
@@ -35,6 +35,11 @@ export function changeProductInLocalStorage(elDomProductAdd) {
     parentEl.innerHTML += btnAddInProductCard('remove', coctailId);
   } else {
     parentEl.innerHTML += btnAddInProductCard('add', coctailId);
+    if (checkFavCocktailsIndexFile) {
+      refs.productList
+        .querySelector(`[data-idproduct="${coctailId}"]`)
+        .remove();
+    }
   }
 
   getProductsInLocalStorage(coctailId);
@@ -67,8 +72,12 @@ export function changeProductsInModalLocStorage(elBtnAddInModal) {
       'beforeend',
       btnAddCocktailInMOdal('add', coctailId)
     );
-
     elBtnAddToProductsParent.innerHTML += btnAddInProductCard('add', coctailId);
+    if (checkFavCocktailsIndexFile) {
+      refs.productList
+        .querySelector(`[data-idproduct="${coctailId}"]`)
+        .remove();
+    }
   }
 
   getProductsInLocalStorage(coctailId);

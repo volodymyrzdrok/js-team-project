@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>favCock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="icon" href="./images/favicon.png" sizes="any" /> -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../sass/index.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
+
+    <script type="module" src="../js/indexFavCocktails.js"></script>
+  </head>
+  <body>
+    <header class="page-header">
+
+    <div class="container page-header__container">       
+            <a href="../index.html" class="header_logo">
+                <img src="/src/images/logo.png" alt="logo" class="logo_image">
+            </a>
+
+        <nav class="header__nav">
+            <a href="../index.html" class="site-nav__link">Home</a>
+                    <p class="site-nav__item">Favorite
+                       <ul class="site-nav__favorites nav__links ">
+                           <li class="site-nav__item-menu"><a href="../partials/fav-cocktails.html" class="site-nav__link-menu">Favorite cocktails</a></li>
+                           <li class="site-nav__item-menu"><a href="../partials/fav-ingredients.html" class="site-nav__link-menu">Favorite ingredients</a></li>
+                      </ul>
+                    </p>
+                </ul>
+        </nav>
+
+        <form class = "form-submit">
+            <button class="form-submit__button" type="submit">
+                    <svg class="logo__svg" width="24px" height="24px">
+                        <use href="/src/images/svgs.svg#icon-bx_search"></use>
+                    </svg>
+            </button>
+            <div class="line"></div>
+
+            <input class="form-submit__input" name="searchCocktailName" type="text" placeholder="Search">
+
+
+
+            
+        </form>
+        
+        <button class="signup__btn signup__btn--desktop" type="button">
+            <svg width="32px" height="32px">
+                <use href="/src/images/svgs.svg#icon-authorization"></use>
+            </svg> </button>
+
+        
+
+
+        <div class="header-switcher ">
+            <span class="header-switcher__item-light ">Light</span>
+            <label class="header-switcher__switch">
+                <input checked type="checkbox" class="header-switcher__input">
+                <span class="header-switcher__slider round"></span>
+            </label>
+            <span class="header-switcher__item-dark">Dark</span>
+        </div>
+
+        <div class="mobile-menu__burger">
+            <button type="button" class="mobile-menu__burger-btn">
+                <svg class="mobile-menu__open-icon" width="30" height="16">
+                    <use href="/src/images/svgs.svg#icon-burger_menu"></use>
+                </svg>
+            </button>
+        </div>
+
+
+<!-- мобильное меню -->
+
+        <div class="mobile-menu ">
+
+            
+            <a href="../index.html" class="header_logo-mobile">
+                <img src="/src/images/logo.png" alt="logo" class="logo_image">
+            </a>
+
+            <button type="button" class="mobile-menu__close-btn">
+                <svg class="mobile-menu__close-icon" width="32" height="32">
+                    <use href="/src/images/svgs.svg#icon-close-line"></use>
+                </svg>
+            </button>
+
+            <div class="header-switcher mobile ">
+                <span class="header-switcher__item-light ">Light</span>
+                <label class="header-switcher__switch">
+                    <input checked type="checkbox" class="header-switcher__input">
+                    <span class="header-switcher__slider round"></span>
+                </label>
+                <span class="header-switcher__item-dark">Dark</span>
+            </div>
+
+           
+
+            <form class="form-submit mobile">
+                <button class="form-submit__button" type="submit">
+                    <svg class="logo__svg" width="24px" height="24px">
+                        <use href="/src/images/svgs.svg#icon-bx_search"></use>
+                    </svg>
+                </button>
+                <div class="line"></div>
+                <input class="form-submit__input" type="text" name="searchCocktailName" placeholder="Search">
+            
+            </form>
+
+            
+        
+            <div class="site-nav-mobile ">
+        
+                    <a href="../index.html" class="site-nav-mobile__link link">Home</a>
+                    <p class="site-nav-mobile__item">Favorite
+                            <svg class="site-nav-mobile__arrow" width="24" height="24">
+                                <use href="/src/images/svgs.svg#icon-arrow-up"></use>
+                            </svg>
+                            <ul class="site-nav__favorites nav__links mobile site-nav__favorites-mobile">
+                                <li class="site-nav__item-menu"><a href="../partials/fav-cocktails.html" class="site-nav__link-menu">Favorite cocktails</a></li>
+                                <li class="site-nav__item-menu"><a href="../partials/fav-ingredients.html" class="site-nav__link-menu">Favorite ingredients</a></li>
+                            </ul>
+                    </p>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</header>
+  <main>
+    <section class="products">
+  <div class="container">
+    <h2 class="products__title">Favorite Cocktails</h2>
+   
+    <ul class="products__list js-product__list">
+
+    </ul>
+  </div>
+</section>
+
+    </main>
+    <footer><include src="./partials/footer.html"></include></footer>
+   <script src="/src/js/header-menu/drop-down-menu.js"></script>
+    <script src="/src/js/header-menu/burger.js"></script>
+  </body>
+</html>

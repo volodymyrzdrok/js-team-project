@@ -54,7 +54,7 @@ export function markupModalIngredients(data) {
             <li class="cocktails-modal__list-item-ingr">Flavour:	Bitter, spicy and sweet</li>
           </ul>
         <button
-  class="cocktails-modal__main-btn"
+  class="cocktails-modal__main-btn  btn-ingred-modal-storage"
   data-idingr="${idIngredient}"
   data-action=${!foundEl ? 'add' : 'remove'}
 >

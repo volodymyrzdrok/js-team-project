@@ -4,6 +4,7 @@ import { markupModalInfo } from '../templates/markupInfoCoctail';
 import * as basicLightbox from 'basiclightbox';
 import { modalIngredients } from './ modalInfoIngredient';
 import { changeProductInLocalStorage } from '../localStorage/getProductsInLocalStorage';
+import { checkFavCocktailsIndexFile } from '../utils/constans';
 
 export async function renderModalCard(e) {
   const elBtnLearn = e.target.closest('.products__card-btns--learn');
@@ -37,6 +38,11 @@ function openModal(data) {
       elInModal
         .querySelector('.cocktails-modal__close-btn')
         .addEventListener('click', instance.close);
+      if (checkFavCocktailsIndexFile) {
+        elInModal
+          .querySelector('.cocktails-modal__main-btn')
+          .addEventListener('click', instance.close);
+      }
     },
     onClose: () => {
       refs.bodyRef.style.overflow = 'auto';

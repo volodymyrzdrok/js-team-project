@@ -57,6 +57,7 @@ button {
     width: $tablet;
   }
   @include desktop-media {
+    padding: 0 15px;
     width: $desktop;
   }
 }

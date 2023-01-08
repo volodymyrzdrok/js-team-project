@@ -7,9 +7,9 @@ export const checkIndexFile =
   windowLocation === '/' ||
   windowLocation === '/js-team-project/';
 export const checkFavCocktailsIndexFile =
-  windowLocation === '/partials/favorite-cocktails.html' ||
-  windowLocation === '/js-team-project/partials/favorite-cocktails.html';
+  windowLocation === '/partials/fav-cocktails.html' ||
+  windowLocation === '/js-team-project/partials/fav-cocktails.html';
 export const checkFavIngredientsIndexFile =
-  windowLocation === '/partials/favorite-ingredients.html' ||
-  windowLocation === '/js-team-project/partials/favorite-ingredients.html';
+  windowLocation === '/partials/fav-ingredients.html' ||
+  windowLocation === '/js-team-project/partials/fav-ingredients.html';
 export const DEBOUNCE_DELAY = 200;
