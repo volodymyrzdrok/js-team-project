@@ -62,14 +62,3 @@ export function markupModalIngredients(data) {
 </button>
           </div>   </div>`;
 }
-
-// export const btnAddIngredInModal = (action, id) =>
-//   `<button
-//   class="cocktails-modal__main-btn"
-//   data-idingr="${id}"
-//   data-action=${action}
-// >
-//   ${action === 'add' ? 'Add to favorite' : 'Remove from favorite'}
-// </button>`;
-
-// ${btnAddIngredInModal(!foundEl ? 'add' : 'remove', idIngredient)}

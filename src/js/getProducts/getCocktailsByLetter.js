@@ -1,9 +1,4 @@
-import {
-  //   clearDomELements,
-  onReject,
-  renderElementsMarkup,
-  scrollSmoth,
-} from '../utils/utils';
+import { onReject, renderElementsMarkup, scrollSmoth } from '../utils/utils';
 import { fetchProductsByLetter } from '../api/api';
 import { refs } from '../refs/refs';
 import { markupProductsList } from '../templates/markupSearchingCocktails';

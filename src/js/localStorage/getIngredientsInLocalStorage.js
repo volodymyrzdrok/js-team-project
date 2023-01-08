@@ -3,10 +3,6 @@ import {
   getDataLocalStorage,
   saveDataLocalStorage,
 } from '../api/localStorageApi';
-import { refs } from '../refs/refs';
-
-import { btnAddIngredInModal } from '../templates/markupInfoIngredient';
-
 import { FAV_INGREDIENTS } from '../utils/constans';
 
 export function getIngredientsInLocalStorage(e) {
@@ -15,7 +11,6 @@ export function getIngredientsInLocalStorage(e) {
 
   const ingredId = elemBtnIngToStorage.dataset.idingr;
   const actionElIngBtn = elemBtnIngToStorage.dataset.action;
-  // const parentElModalIngr = document.querySelector('.cocktails-modal__body');
 
   if (actionElIngBtn === 'remove') {
     elemBtnIngToStorage.dataset.action = 'add';
@@ -28,7 +23,6 @@ export function getIngredientsInLocalStorage(e) {
   getIngredientsFunct(ingredId);
 }
 
-// =============
 export async function getIngredientsFunct(idProduct) {
   const productsFromStorage = getDataLocalStorage(FAV_INGREDIENTS);
 
@@ -45,9 +39,3 @@ export async function getIngredientsFunct(idProduct) {
     saveDataLocalStorage(FAV_INGREDIENTS, newProductsFromStorage);
   }
 }
-
-// if (actionEl === 'add') {
-//   parentElModalIngr.innerHTML += btnAddIngredInModal('remove', ingredId);
-// } else {
-//   parentElModalIngr.innerHTML += btnAddIngredInModal('add', ingredId);
-// }
