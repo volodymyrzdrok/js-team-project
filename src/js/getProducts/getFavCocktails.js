@@ -6,14 +6,24 @@ import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { favMessage } from '../templates/markupIngredients';
 
 export async function getFavCocktails() {
-  console.log('cock-fav ---> ', await getDataLocalStorage(FAV_COCKTAILS));
-
   try {
     const result = await getDataLocalStorage(FAV_COCKTAILS);
     onResolve(result);
   } catch (error) {
     onReject(error);
   }
+}
+
+export async function getSearchFavCocktailsByName(e) {
+  const nameProduct = e.target.value.toLowerCase().trim();
+
+  const favCoctailsArr = await getDataLocalStorage(FAV_COCKTAILS);
+
+  const newFilterArr = favCoctailsArr.filter(el =>
+    el.strDrink.toLowerCase().includes(nameProduct)
+  );
+
+  onResolve(newFilterArr);
 }
 
 function onResolve(drinksArr) {

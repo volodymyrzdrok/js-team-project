@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 60px;
+
     @media screen and(min-width:$tablet) {
       gap: 32px;
     }
@@ -79,7 +80,6 @@
 }
 
 .fav-notFound__box {
-  min-height: calc(100vh - 424px);
   margin: 0 auto;
 }
 
@@ -97,4 +97,8 @@
     width: 385px;
     @include font(32px, 72px, 400);
   }
+}
+
+.fav-height {
+  min-height: calc(100vh - 424px);
 }

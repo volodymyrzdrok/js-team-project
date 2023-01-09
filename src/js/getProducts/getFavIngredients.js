@@ -6,8 +6,6 @@ import { renderElementsMarkup, onReject } from '../utils/utils';
 import { favMessage, markupIngredients } from '../templates/markupIngredients';
 
 export async function getFavorIngredinents() {
-  console.log('ingred-fav ---> ', await getDataLocalStorage(FAV_INGREDIENTS));
-
   try {
     const result = await getDataLocalStorage(FAV_INGREDIENTS);
     onResolve(result);
@@ -15,6 +13,17 @@ export async function getFavorIngredinents() {
     onReject(error);
     console.log(error);
   }
+}
+export async function getSearchFavIngredientsByName(e) {
+  const nameProduct = e.target.value.toLowerCase().trim();
+
+  const favCoctailsArr = await getDataLocalStorage(FAV_INGREDIENTS);
+
+  const newFilterArr = favCoctailsArr.filter(el =>
+    el.strIngredient.toLowerCase().includes(nameProduct)
+  );
+
+  onResolve(newFilterArr);
 }
 
 function onResolve(ingredArr) {
