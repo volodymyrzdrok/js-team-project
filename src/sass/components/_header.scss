@@ -264,7 +264,7 @@ input::placeholder {
   }
 
   .signup__btn {
-    display: none;
+    display: block;
   }
 
   .form-submit {
@@ -511,7 +511,8 @@ input::placeholder {
   }
 }
 
-.userLabel {
+.user-label {
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   display: flex;
@@ -522,4 +523,26 @@ input::placeholder {
   background-color: $accent-color;
   color: $white-bg-color;
   text-transform: uppercase;
+}
+
+.user-menu {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.signOut__btn {
+  border: 1px solid $accent-color;
+  font-size: 14px;
+  background-color: $white-bg-color;
+  color: $accent-color;
+  padding: 2px;
+  max-width: 44px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-text-color;
+    color: $white-bg-color;
+  }
 }

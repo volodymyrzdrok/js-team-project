@@ -2,7 +2,7 @@ import { refs } from '../refs/refs';
 import { fetchInfoProductById } from '../api/api';
 import { markupModalInfo } from '../templates/markupInfoCoctail';
 import * as basicLightbox from 'basiclightbox';
-import { modalIngredients } from './ modalInfoIngredient';
+import { modalIngredients } from './modalInfoIngredient';
 import { changeProductInLocalStorage } from '../localStorage/getProductsInLocalStorage';
 import { checkFavCocktailsIndexFile } from '../utils/constans';
 

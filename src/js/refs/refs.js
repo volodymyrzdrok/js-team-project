@@ -7,7 +7,11 @@ export const refs = {
   productTitle: document.querySelector('.products__title'),
 
   signUpBtn: document.querySelector('.js-signUpBtn'),
+  signOutBtn: document.querySelector('.js-signOutBtn'),
+  userLabel: document.querySelector('.js-user-label'),
+  userMenu: document.querySelector('.js-user-menu'),
   testButton: document.querySelector('.js-test'),
+
   bodyRef: document.querySelector('body'),
   checkboxInput: document.querySelector('.header-switcher__input'),
   spinnerEl: document.querySelector('.spinner'),

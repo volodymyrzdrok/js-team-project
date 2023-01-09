@@ -8,8 +8,7 @@ import { getCocktailsByLetter } from './js/getProducts/getCocktailsByLetter';
 import { renderModalCard } from './js/modals/modalInfoCoctail';
 import { themeController, themeOn } from './js/theme/theme-controller';
 
-import { getLoginStatus } from './js/authorization/authorization';
-import { sendData } from './js/api';
+import { test } from './js/authorization/authorization';
 
 getRandomCocktails();
 
@@ -18,17 +17,8 @@ refs.searchCocktailsInput[1].addEventListener('submit', getCocktailsByName);
 refs.lettersContainer.addEventListener('click', getCocktailsByLetter);
 
 // test
-const test = () => {
-  const userID = getLoginStatus();
-  if (!userID) {
-    return;
-  }
-  sendData({ task: 'text-2' }, `${userID}/test`);
-  getData(`${userID}/test`).then(data => {
-    console.log(data);
-  });
-};
 refs.testButton.addEventListener('click', test);
+
 refs.productList.addEventListener('click', renderModalCard);
 refs.checkboxInput.addEventListener('change', themeController);
 themeOn();

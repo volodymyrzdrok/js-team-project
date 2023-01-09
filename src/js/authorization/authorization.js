@@ -1,7 +1,5 @@
 import { refs } from '../refs/refs';
-import { renderElementsMarkup } from '../utils/utils.js';
-import { authMenuMarkup } from '../templates/authMenuMarkup.js';
-// 05.01.23\/
+import { sendData, getData } from '../api';
 import { initializeApp } from 'firebase/app';
 import {
   GoogleAuthProvider,
@@ -24,7 +22,6 @@ export const onSignInWithPopup = () => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      console.log(user);
       return user;
       // ...
     })
@@ -39,48 +36,64 @@ export const onSignInWithPopup = () => {
       // ...
     });
 };
-// 05.01.23/\
+
 export const onSignOut = () => {
-  return signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      console.log('Sign-out :>> ');
-    })
-    .catch(error => {
-      // An error happened.
-    });
+  return signOut(auth).catch(e => {
+    console.log(e.message);
+  });
 };
-// 09.01.23/\
+
 let userID = '';
 
-const authorization = () => {
-  if (!userID) {
-    onSignInWithPopup().then(user => {
-      userID = user.uid;
-    });
-  } else {
-    onSignOut().then(() => {
-      userID = '';
-    });
-  }
+const login = () => {
+  onSignInWithPopup().then(user => {
+    userID = user.uid;
 
-  renderElementsMarkup(refs.signUpBtn, authMenuMarkup, !userID);
+    refs.userLabel.textContent = user.email[0];
+    refs.userMenu.style.display = 'flex';
+    refs.signUpBtn.style.display = 'none';
+
+    refs.signOutBtn.addEventListener('click', logout);
+    refs.signUpBtn.removeEventListener('click', login);
+  });
 };
 
-refs.signUpBtn.addEventListener('click', authorization);
+const logout = () => {
+  onSignOut().then(() => {
+    userID = '';
+
+    refs.userLabel.textContent = '';
+    refs.userMenu.style.display = 'none';
+    refs.signUpBtn.style.display = 'block';
+
+    refs.signUpBtn.addEventListener('click', login);
+    refs.signOutBtn.removeEventListener('click', logout);
+  });
+};
+
+refs.signUpBtn.addEventListener('click', login);
 
 export const getLoginStatus = () => {
   return userID;
 };
 
-// getData('test').then(data => {
-//   console.log(data);
-//   // рендер списка избраных коктелей или ингридиентов
-// });
+export const test = () => {
+  const userID = getLoginStatus();
+  if (!userID) {
+    console.log('Not authorized');
+    return;
+  }
+  sendData('cocktails', { name: 'some cocktails' }, userID);
+  sendData('ingredients', { name: 'tomato' }, userID);
+  sendData('contacts', { name: 'Petr', lastName: 'Kl.' });
 
-// sendData({ task: 'text-2' }, 'test');
-// сохранить в базу данных
-
-// console.log(isLoggedIn);
-
-// deleteItem('test', '-NLHwtVl7-5fGGn9Ppmj');
+  getData('cocktails', userID).then(data => {
+    console.log('data >>>', data);
+  });
+  getData('ingredients', userID).then(data => {
+    console.log('data >>>', data);
+  });
+  getData('contacts').then(data => {
+    console.log('data >>>', data);
+  });
+};

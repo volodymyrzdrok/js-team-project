@@ -6,7 +6,7 @@ import {
   getFavorIngredinents,
   getSearchFavIngredientsByName,
 } from './getProducts/getFavIngredients';
-import { modalIngredientsInFavPage } from './modals/ modalInfoIngredient';
+import { modalIngredientsInFavPage } from './modals/modalInfoIngredient';
 import { themeController, themeOn } from './theme/theme-controller';
 
 getFavorIngredinents();

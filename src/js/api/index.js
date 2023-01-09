@@ -7,8 +7,9 @@ const db = getDatabase();
 
 // экспорт методов работы с данными
 
-export const getData = (endPoint = 'task') => {
-  return get(ref(db, endPoint))
+export const getData = (endPoint = 'task', userId = '') => {
+  const url = userId ? `${userId}/${endPoint}` : endPoint;
+  return get(ref(db, url))
     .then(snapshot => {
       if (snapshot.exists()) {
         const data = snapshot.val();
@@ -22,17 +23,19 @@ export const getData = (endPoint = 'task') => {
     });
 };
 
-export const sendData = (data = {}, endPoint = 'task') => {
+export const sendData = (endPoint = 'task', data = {}, userId = '') => {
+  const url = userId ? `${userId}/${endPoint}` : endPoint;
   try {
-    push(ref(db, endPoint), data);
+    push(ref(db, url), data);
   } catch (error) {
     console.log('error :>> ', error);
   }
 };
 
-export const deleteItem = (endPoint, id) => {
+export const deleteItem = (endPoint = 'task', id = '', userId = '') => {
+  const url = userId ? `${userId}/${endPoint}/${id}` : `${endPoint}/${id}`;
   try {
-    remove(ref(db, endPoint + '/' + id));
+    remove(ref(db, url));
   } catch (error) {
     console.log('error :> ', error);
   }
