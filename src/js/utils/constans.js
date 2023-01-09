@@ -13,3 +13,6 @@ export const checkFavIngredientsIndexFile =
   windowLocation === '/partials/fav-ingredients.html' ||
   windowLocation === '/js-team-project/partials/fav-ingredients.html';
 export const DEBOUNCE_DELAY = 200;
+export const THEME_SWITCHER = 'theme-switcher';
+
+export const THEME_DARK = 'dark';

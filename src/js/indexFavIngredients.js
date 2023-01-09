@@ -6,6 +6,7 @@ import {
   getSearchFavIngredientsByName,
 } from './getProducts/getFavIngredients';
 import { modalIngredientsInFavPage } from './modals/ modalInfoIngredient';
+import { themeController, themeOn } from './theme/theme-controller';
 
 getFavorIngredinents();
 
@@ -19,3 +20,6 @@ refs.inputFavPage[1].addEventListener(
   'input',
   _debounce(getSearchFavIngredientsByName, DEBOUNCE_DELAY)
 );
+
+refs.checkboxInput.addEventListener('change', themeController);
+themeOn();

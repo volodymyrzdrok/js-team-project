@@ -6,6 +6,7 @@ import {
 import { renderModalCard } from './modals/modalInfoCoctail';
 
 import { refs } from './refs/refs';
+import { themeController, themeOn } from './theme/theme-controller';
 import { DEBOUNCE_DELAY } from './utils/constans';
 
 getFavCocktails();
@@ -19,3 +20,6 @@ refs.inputFavPage[1].addEventListener(
   _debounce(getSearchFavCocktailsByName, DEBOUNCE_DELAY)
 );
 refs.productList.addEventListener('click', renderModalCard);
+
+refs.checkboxInput.addEventListener('change', themeController);
+themeOn();
