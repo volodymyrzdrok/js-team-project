@@ -7,4 +7,5 @@ export const refs = {
   productTitle: document.querySelector('.products__title'),
   bodyRef: document.querySelector('body'),
   checkboxInput: document.querySelector('.header-switcher__input'),
+  spinnerEl: document.querySelector('.spinner'),
 };
