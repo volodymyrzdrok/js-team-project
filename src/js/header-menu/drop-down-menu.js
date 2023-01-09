@@ -1,4 +1,4 @@
- 
+(() => {
   const refs = {
     openMenuFav: document.querySelector('.site-nav__favorites'),
     favorites: document.querySelector('.site-nav__item'),
@@ -16,3 +16,4 @@
     function toggleModalMobile() {
     refs.favoritesMobileMenu.classList.toggle('is-open');
   }
+})();
