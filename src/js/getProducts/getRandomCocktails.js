@@ -1,7 +1,7 @@
 import { refs } from '../refs/refs';
 import { fetchProductsRandom } from '../api/api';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
-import { renderElementsMarkup } from '../utils/utils';
+import { hideELements, renderElementsMarkup } from '../utils/utils';
 
 let amountCocktails = 3;
 const clientWidth = document.documentElement.clientWidth;
@@ -13,6 +13,7 @@ if (clientWidth >= 1280) {
 }
 
 export async function getRandomCocktails() {
+  hideELements(refs.spinnerEl, false);
   const promises = [];
   for (let i = 0; i < amountCocktails; i++) {
     promises.push(fetchProductsRandom());
@@ -24,4 +25,5 @@ export async function getRandomCocktails() {
   }
 
   renderElementsMarkup(refs.productList, markupProductsList, randomCocktails);
+  hideELements(refs.spinnerEl, true);
 }

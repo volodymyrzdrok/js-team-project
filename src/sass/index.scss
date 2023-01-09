@@ -4,6 +4,7 @@
 @import './utils/mixins.scss';
 @import './utils/base.scss';
 @import './utils/common';
+@import './components/spinner';
 
 @import './components/header';
 @import './components/hero';
@@ -11,4 +12,4 @@
 @import './components/modal-ingredInfo';
 @import './components/modal-productInfo';
 @import './components/footer';
-@import'./components/fav-ingredients'
+@import './components/fav-ingredients';

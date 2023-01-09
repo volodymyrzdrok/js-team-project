@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 60px;
+
     @media screen and(min-width:$tablet) {
       gap: 32px;
     }
@@ -36,6 +37,16 @@
     }
     @media screen and(min-width:$desktop) {
       width: calc((100% - 64px) / 3);
+    }
+
+    &:nth-child(odd) {
+      animation: fadeInRight;
+      animation-duration: 400ms;
+    }
+
+    &:nth-child(even) {
+      animation: fadeInLeft;
+      animation-duration: 400ms;
     }
   }
 
@@ -76,4 +87,28 @@
   @media screen and(min-width:$desktop) {
     margin-bottom: 28px;
   }
+}
+
+.fav-notFound__box {
+  margin: 0 auto;
+}
+
+.fav-notFound__message {
+  font-family: 'Poppins';
+
+  width: 240px;
+  @include font(20px, 60px, 400);
+
+  @include tablet-media {
+    @include font(24px, 60px, 400);
+    width: 296px;
+  }
+  @include desktop-media {
+    width: 385px;
+    @include font(32px, 72px, 400);
+  }
+}
+
+.fav-height {
+  min-height: calc(100vh - 424px);
 }
