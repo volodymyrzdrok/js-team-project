@@ -4,6 +4,8 @@ import { getRandomCocktails } from './js/getProducts/getRandomCocktails';
 import { getCocktailsByLetter } from './js/getProducts/getCocktailsByLetter';
 import { renderModalCard } from './js/modals/modalInfoCoctail';
 import { themeController, themeOn } from './js/theme/theme-controller';
+import './js/header-menu/burger.js'
+import  './js/header-menu/drop-down-menu.js'
 
 getRandomCocktails();
 
