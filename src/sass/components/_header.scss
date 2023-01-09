@@ -19,6 +19,26 @@
     border: none;
     background-color: $white-bg-color;
 }
+
+.signup-greeting{
+    display: none;
+}
+
+.signup-greeting.is-open{
+    border-radius: 4px;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+}
+
+.signup-greeting__text{
+padding-bottom: 5px;}
+
+.signup-greeting__logout{
+    border-radius: 4px;
+    background-color: $accent-color;
+}
+
 // слайдер
 .header-switcher {
     align-items: center;
