@@ -29,6 +29,11 @@
     flex-direction: column;
     display: flex;
     position: absolute;
+    padding: 5px;
+    background-color: $white-bg-color;
+
+    body.dark &{
+    background-color: $dark-bg-color;}
 }
 
 .signup-greeting__text{
@@ -36,7 +41,20 @@ padding-bottom: 5px;}
 
 .signup-greeting__logout{
     border-radius: 4px;
+    background-color: $white-bg-color;
+    color:$accent-color;
+    border-color: $accent-color;
+    padding: 3px;
+
+    body.dark &{
+        background-color: $dark-bg-color;
+        color: $accent-color;
+    }
+}
+.signup-greeting__logout:hover{
     background-color: $accent-color;
+    color: $white-bg-color;
+    border-color: $accent-color;
 }
 
 // слайдер
