@@ -1,0 +1,2 @@
+!function(){var e={openMenuFav:document.querySelector(".site-nav__favorites"),favorites:document.querySelector(".site-nav__item"),favoritesMobile:document.querySelector(".site-nav-mobile__item"),favoritesMobileMenu:document.querySelector(".site-nav__favorites-mobile")};e.favorites.addEventListener("click",(function(){e.openMenuFav.classList.toggle("is-open")})),e.favoritesMobile.addEventListener("click",(function(){e.favoritesMobileMenu.classList.toggle("is-open")}))}();
+//# sourceMappingURL=fav-ingredients.47386a0f.js.map
