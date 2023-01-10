@@ -8,6 +8,10 @@ import {
 import { modalIngredientsInFavPage } from './modals/ modalInfoIngredient';
 import { themeController, themeOn } from './theme/theme-controller';
 
+import './header-menu/burger.js'
+import './header-menu/drop-down-menu.js'
+import  './header-menu/signup.js'
+
 getFavorIngredinents();
 
 refs.ingredList.addEventListener('click', modalIngredientsInFavPage);

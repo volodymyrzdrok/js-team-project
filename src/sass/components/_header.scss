@@ -18,6 +18,8 @@
 .signup__btn {
     border: none;
     background-color: $white-bg-color;
+    body.dark &{
+    background-color: $dark-bg-color;}
 }
 
 .signup-greeting{
@@ -31,9 +33,9 @@
     position: absolute;
     padding: 5px;
     background-color: $white-bg-color;
-
     body.dark &{
-    background-color: $dark-bg-color;}
+        background-color: $dark-bg-color;
+    }
 }
 
 .signup-greeting__text{
@@ -218,6 +220,7 @@ input::placeholder {
     line-height: 0;
     display: block;
     transition-duration: $animation;
+    margin-top: 5px;
 }
 
 
@@ -360,8 +363,8 @@ position: relative;}
     display: none;
 }
 
-.signup__btn {
-    display: none;
+.signup{
+    margin-bottom: -15px;
 
 }
 
@@ -458,6 +461,10 @@ margin-top: 11px;
 
 .signup__btn{
     margin-top: 14px;
+}
+.signup {
+    margin-bottom: 0px;
+
 }
 .mobile-menu__open-icon{
 margin-top: 11px;

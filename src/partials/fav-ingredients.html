@@ -58,10 +58,16 @@
             
         </form>
         
-        <button class="signup__btn signup__btn--desktop" type="button">
-            <svg width="32px" height="32px">
-                <use href="/src/images/svgs.svg#icon-authorization"></use>
-            </svg> </button>
+          <div class="signup">
+            <button class="signup__btn signup__btn--desktop" data-tooltip="name" type="button">
+              <img class="signup__image" width="32px" height="32px" alt="username" src="/src/images/authorization.svg">
+              </img> </button>
+            <div class="signup-greeting">
+              <p class="signup-greeting__text">Hello $name</p>
+              <button class="signup-greeting__logout">Log out</button>
+          
+            </div>
+          </div>
 
         
 
@@ -76,11 +82,11 @@
         </div>
 
         <div class="mobile-menu__burger">
-            <button type="button" class="mobile-menu__burger-btn">
-                <svg class="mobile-menu__open-icon" width="30" height="16">
-                    <use href="/src/images/svgs.svg#icon-burger_menu"></use>
-                </svg>
-            </button>
+          <button type="button" class="mobile-menu__burger-btn">
+            <svg class="mobile-menu__open-icon" width="30" height="16">
+              <use href="/src/images/svgs.svg#icon-burger_menu"></use>
+            </svg>
+          </button>
         </div>
 
 
@@ -100,12 +106,12 @@
             </button>
 
             <div class="header-switcher mobile ">
-                <span class="header-switcher__item-light ">Light</span>
-                <label class="header-switcher__switch">
-                    <input  type="checkbox" class="header-switcher__input">
-                    <span class="header-switcher__slider round"></span>
-                </label>
-                <span class="header-switcher__item-dark">Dark</span>
+              <span class="header-switcher__item-light ">Light</span>
+              <label class="header-switcher__switch">
+                <input type="checkbox" class="header-switcher__input">
+                <span class="header-switcher__slider round"></span>
+              </label>
+              <span class="header-switcher__item-dark">Dark</span>
             </div>
 
            
@@ -159,8 +165,8 @@
     
     </main>
     <footer><include src="./partials/footer.html"></include></footer>
-   <script src="/src/js/header-menu/drop-down-menu.js"></script>
-    <script src="/src/js/header-menu/burger.js"></script>
+   <!-- <script src="/src/js/header-menu/drop-down-menu.js"></script>
+    <script src="/src/js/header-menu/burger.js"></script> -->
   </body>
 </html>
 
