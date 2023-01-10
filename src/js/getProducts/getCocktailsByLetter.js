@@ -3,12 +3,19 @@ import { fetchProductsByLetter } from '../api/api';
 import { refs } from '../refs/refs';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { imgNotFound } from '../templates/markupImages';
-
+const clientWidth = document.documentElement.clientWidth;
 export async function getCocktailsByLetter(e) {
   const checkEL = e.target.hasAttribute('data-letter');
 
+  // console.log(clientWidth);
   if (!checkEL) return;
-
+if (clientWidth<745) {
+  e.target.classList.add("keyboard__cstm-input--active");
+  e.target.parentNode.classList.add("keyboard__cstm-summary--active");
+  // console.log(e.target);
+  // console.log(e.target.parentNode);
+  // console.log(e.target.classList);
+}
   const letter = e.target.getAttribute('data-letter').trim();
 
   try {
