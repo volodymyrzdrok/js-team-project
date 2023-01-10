@@ -34,12 +34,13 @@
   flex-direction: column;
   display: flex;
   padding: 5px;
-  background-color: $white-bg-color;
+  background-color: transparent;
+  // background-color: $white-bg-color;
   transition: all $animation;
   z-index: 7;
 
   body.dark & {
-    background-color: $dark-bg-color;
+    // background-color: $dark-bg-color;
   }
 }
 
@@ -54,8 +55,10 @@
   border-color: $accent-color;
   padding: 3px;
   transition: all $animation;
-  margin-bottom: 3px;
 
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
   body.dark & {
     background-color: $dark-bg-color;
     color: $accent-color;
