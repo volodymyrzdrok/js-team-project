@@ -623,11 +623,13 @@ input::placeholder {
 }
 
 .site-nav__link:hover {
-    color: $accent-color
+    color: $accent-color;
+    transition: $animation;
 }
 
 .site-nav__item:hover {
-    color: $accent-color
+    color: $accent-color;
+    transition: $animation;
 }
 
 .header-switcher{
@@ -666,6 +668,7 @@ input::placeholder {
 
 .site-nav__item-menu:hover{
 background-color: $accent-color;
+transition: $animation;
 }
 
 .site-nav__link-menu{
@@ -679,6 +682,7 @@ background-color: $accent-color;
 
 .site-nav__item-menu:hover .site-nav__link-menu{
     color: $white-bg-color;
+    transition: $animation;
 
     body.dark &{
     color:$dark-bg-color}

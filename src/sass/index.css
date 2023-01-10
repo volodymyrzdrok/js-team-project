@@ -648,9 +648,11 @@ body.dark .site-nav-mobile__item {
   }
   .site-nav__link:hover {
     color: #fd5103;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .site-nav__item:hover {
     color: #fd5103;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .header-switcher {
     display: flex;
@@ -680,6 +682,7 @@ body.dark .site-nav-mobile__item {
   }
   .site-nav__item-menu:hover {
     background-color: #fd5103;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .site-nav__link-menu {
     color: #000000;
@@ -689,6 +692,7 @@ body.dark .site-nav-mobile__item {
   }
   .site-nav__item-menu:hover .site-nav__link-menu {
     color: #fcfcfc;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   body.dark .site-nav__item-menu:hover .site-nav__link-menu {
     color: #202025;
