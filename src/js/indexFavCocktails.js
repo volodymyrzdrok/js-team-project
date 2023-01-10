@@ -11,9 +11,9 @@ import { refs } from './refs/refs';
 import { themeController, themeOn } from './theme/theme-controller';
 import { DEBOUNCE_DELAY } from './utils/constans';
 
-import './header-menu/burger.js'
-import './header-menu/drop-down-menu.js'
-import './header-menu/signup.js'
+import './header-menu/burger.js';
+import './header-menu/drop-down-menu.js';
+import './header-menu/signup.js';
 
 getFavCocktails();
 
@@ -27,5 +27,6 @@ refs.inputFavPage[1].addEventListener(
 );
 refs.productList.addEventListener('click', renderModalCard);
 
-refs.checkboxInput.addEventListener('change', themeController);
+refs.checkboxInput[0].addEventListener('change', themeController);
+refs.checkboxInput[1].addEventListener('change', themeController);
 themeOn();

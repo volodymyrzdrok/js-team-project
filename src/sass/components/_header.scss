@@ -1,647 +1,611 @@
 // logo
-.logo_image{
-    height: 43px;
-    width: 156px;
-    
+.logo_image {
+  height: 43px;
+  width: 156px;
 }
 // header-container
 .page-header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-
 
 // авторизация
 .signup__btn {
-    border: none;
-    background-color: $white-bg-color;
-    body.dark &{
+  border: none;
+  background-color: $white-bg-color;
+  body.dark & {
     background-color: $dark-bg-color;
-    
-}
-}
-
-.signup-greeting{
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+  }
 }
 
-.signup-greeting.is-open{
-    opacity: 1;
-    visibility: inherit;
-    border-radius: 4px;
-    flex-direction: column;
-    display: flex;
-    padding: 5px;
-    background-color: $white-bg-color;
-    transition: $animation;
-    
-    body.dark &{
-        background-color: $dark-bg-color;
-        
-    }
+.signup-greeting {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
 }
 
-.signup-greeting__text{
-    padding-bottom: 5px;}
+.signup-greeting.is-open {
+  opacity: 1;
+  visibility: inherit;
+  border-radius: 4px;
+  flex-direction: column;
+  display: flex;
+  padding: 5px;
+  background-color: $white-bg-color;
+  transition: all $animation;
 
-.signup-greeting__logout{
-    border-radius: 4px;
-    background-color: $white-bg-color;
-    color:$accent-color;
-    border-color: $accent-color;
-    padding: 3px;
-    
-
-    body.dark &{
-        background-color: $dark-bg-color;
-        color: $accent-color;
-    }
+  body.dark & {
+    background-color: $dark-bg-color;
+  }
 }
-.signup-greeting__logout:hover{
-    background-color: $accent-color;
-    color: $white-bg-color;
-    border-color: $accent-color;
+
+.signup-greeting__text {
+  padding-bottom: 5px;
+}
+
+.signup-greeting__logout {
+  border-radius: 4px;
+  background-color: $white-bg-color;
+  color: $accent-color;
+  border-color: $accent-color;
+  padding: 3px;
+
+  body.dark & {
+    background-color: $dark-bg-color;
+    color: $accent-color;
+  }
+}
+.signup-greeting__logout:hover {
+  background-color: $accent-color;
+  color: $white-bg-color;
+  border-color: $accent-color;
 }
 
 // слайдер
 .header-switcher {
-    align-items: center;
-    gap: 10px;
-    display: flex;
+  align-items: center;
+  gap: 10px;
+  display: flex;
 
-    &__item-light {
-            color: $accent-color;
-            font-size: 18px;
-            line-height: 24px;
+  &__item-light {
+    color: $accent-color;
+    font-size: 18px;
+    line-height: 24px;
 
-            body.dark & {
-                    color: $white-bg-color;
-                }
-        }
-    &__item-dark {
+    body.dark & {
+      color: $white-bg-color;
+    }
+  }
+  &__item-dark {
     font-size: 18px;
     line-height: 24px;
     color: $primary-dark-text-color;
 
     body.dark & {
-            color: $accent-color;
-        }
+      color: $accent-color;
     }
+  }
 
-    &__switch {
-        width: 40px;
-        height: 20px;
-        display: inline-block;
-        position: relative;
-    }
+  &__switch {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+  }
 
-    &__input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 }
 
+.header-switcher__input:checked + .header-switcher__slider {
+  background-color: #fd5103;
+  border: 1px solid #fcfcfc;
+  border-radius: 20px;
+}
 
-.header-switcher__input:checked+.header-switcher__slider{
-    background-color: #fd5103;
-    border: 1px solid #fcfcfc;
-    border-radius: 20px;
- }
-
-.header-switcher__input:checked+.header-switcher__slider:before {
-    background-color: #fcfcfc;
-    transform: translate(20px);
+.header-switcher__input:checked + .header-switcher__slider:before {
+  background-color: #fcfcfc;
+  transform: translate(20px);
 }
 .header-switcher__input:checked .header-switcher__item-dark {
-    color: #fcfcfc;
+  color: #fcfcfc;
 }
 
 .header-switcher__slider.round {
-    width: 40px;
-    height: 20px;
-    background-color: $white-bg-color;
-    border: 1px solid $accent-color;
-    border-radius: 20px;
-    position: absolute;
-    cursor: pointer;
+  width: 40px;
+  height: 20px;
+  background-color: $white-bg-color;
+  border: 1px solid $accent-color;
+  border-radius: 20px;
+  position: absolute;
+  cursor: pointer;
 }
 
 .header-switcher__slider.round::before {
-    width: 12px;
-    height: 12px;
-    background-color: $accent-color;
-    border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: $accent-color;
+  border-radius: 50%;
 }
 
-.header-switcher__slider{
-    &::before {
-            content: "";
-            height: 26px;
-            width: 26px;
-            background-color: $white-bg-color;
-            transition: all .4s;
-            position: absolute;
-            bottom: 3px;
-            left: 2px;
-        }}
-
-
-
+.header-switcher__slider {
+  &::before {
+    content: '';
+    height: 26px;
+    width: 26px;
+    background-color: $white-bg-color;
+    transition: all 0.4s;
+    position: absolute;
+    bottom: 3px;
+    left: 2px;
+  }
+}
 
 // форма
 
 .form-submit {
-    width: 100%;
-    max-width: 288px;
-    height: 40px;
-    border: 1px solid $accent-color ;
-    border-radius: 4px;
-    transition-property: outline;
+  width: 100%;
+  max-width: 288px;
+  height: 40px;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  transition-property: outline;
+  transition-duration: $animation;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+
+  &__input {
+    max-width: 247px;
+    border: none;
+    background-color: $white-bg-color;
     transition-duration: $animation;
-    padding: 8px;
+
+    body.dark & {
+      background-color: $dark-bg-color;
+    }
+  }
+
+  &__button {
+    padding: 0%;
+    border: none;
+    background-color: $white-bg-color;
+    padding-right: 8px;
     display: flex;
     align-items: center;
-    margin-right: 40px;
-
-
-    &__input {
-            max-width: 247px;
-            border: none;
-            background-color: $white-bg-color;
-            transition-duration: $animation;
-
-            body.dark & {
-                    background-color: $dark-bg-color
-                }
-        }
-    
-    &__button {
-        padding: 0%;
-        border: none;
-        background-color: $white-bg-color;
-        padding-right: 8px;
-        display: flex;
-        align-items: center;
-        body.dark & {
-                background-color: $dark-bg-color
-            }
-    
+    body.dark & {
+      background-color: $dark-bg-color;
     }
+  }
 
-    &__input {
-        height: 24px;
-        width: 100%;
-        font-size: 14px;
-        color: #5F6775;
-        padding-left: 8px;
-    }  
+  &__input {
+    height: 24px;
+    width: 100%;
+    font-size: 14px;
+    color: #5f6775;
+    padding-left: 8px;
+  }
 }
 
 .form-submit__input:focus {
-    outline: 0;
-    outline-offset: 0;
+  outline: 0;
+  outline-offset: 0;
 }
 
 .line {
-    width: 1px;
-    height: 40px;
-    background-color: $accent-color;
+  width: 1px;
+  height: 40px;
+  background-color: $accent-color;
 }
 input::placeholder {
-    font-size: 14px;
-    color: #5F6775;
+  font-size: 14px;
+  color: #5f6775;
 }
-
 
 .mobile-menu__burger-btn {
-    background-color: var(--white-bg-color);
-    border: 0;
-    padding: 0;
-    line-height: 0;
-    display: block;
-    transition-duration: $animation;
-    margin-top: 5px;
+  background-color: var(--white-bg-color);
+  border: 0;
+  padding: 0;
+  line-height: 0;
+  display: block;
+  transition-duration: $animation;
+  margin-top: 5px;
 
-    body.dark & {
-            fill: $white-bg-color;
-        }
+  body.dark & {
+    fill: $white-bg-color;
+  }
 }
-
 
 // мобильное меню
-.mobile-menu{
-    opacity: 0;
-    visibility:hidden;
-    pointer-events: auto;
-    z-index: 8;
-    padding: 20px 20px;
-    padding-top: 22px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $white-bg-color;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: opacity $animation;
+.mobile-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  z-index: 8;
+  padding: 20px 20px;
+  padding-top: 22px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white-bg-color;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: opacity $animation;
 
-    &.is-open {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-
-            body.dark & {
-                   background-color: $dark-bg-color;
-                }
-            
-            
-        }
-    &__close-btn {
-        z-index: 9;
-        width: 47px;
-        height: 39px;
-        background-color: rgba(0, 0, 0, 0);
-        border: none;
-        display: block;
-        position: absolute;
-        top: 24px;
-        right: 16px;
-        
-    }
-        body.dark & {
-            fill: $white-bg-color;
-        }
-}
-
-.header_logo-mobile{
-    display: block;
-    position: absolute;
-    left: 20px
-}
-
-
-.site-nav__favorites.mobile {
-     visibility: hidden;
-     opacity: 0;
-    transition: $animation;
-}
- 
- .site-nav__favorites-mobile.is-open{
+  &.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    background-color: $white-bg-color;
-        
 
-        body.dark &{
-        background-color: $dark-bg-color;
-        border: 1px solid $white-bg-color;
-    }
-}
-     
- .site-nav__favorites.is-open {
-     opacity: 1;
-     visibility: visible;
-     pointer-events: auto;
-     
- }
-     
- .site-nav__favorites.mobile{
-     z-index: 2;
-     min-width: 213px;
-     border: 1px solid $accent-color;
-     border-radius: 4px;
-     bottom: 0;
- }
-
-.site-nav-mobile__item{
-    padding-bottom:15px;
-    transition: $animation;
-
-
-}
-
-.site-nav__item-menu{
-    padding:15px;
-}
-
-.site-nav__item-menu:active {
-    background-color: $accent-color;
-}
-
-.site-nav__item-menu:active .site-nav__link-menu {
-   color: $white-bg-color;
-
-   body.dark &{
-   color:$dark-bg-color}
-}
-
-.site-nav__link-menu{
-    color: #000000;
     body.dark & {
-            color: $white-bg-color;
-        }
-}
-
-.site-nav-mobile{
-   flex-direction: column;
-   display: flex;
-   position: relative;
-}
-
-
-
-
-
-@media screen and (max-width:  $tablet) {
-// логотип
-.header_logo{
-    margin-right: 125px;
-}
-.logo_image {
-    height: 34px;
-    width: 123px;
-}
-
-.header-switcher{
-    display: none;}
-
-
-.header__nav {
-    display: none;
+      background-color: $dark-bg-color;
+    }
+  }
+  &__close-btn {
+    z-index: 9;
+    width: 47px;
+    height: 39px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
+  body.dark & {
+    fill: $white-bg-color;
+  }
 }
 
 .header_logo-mobile {
-    display: none;
+  display: block;
+  position: absolute;
+  left: 20px;
 }
 
-.signup{
+.site-nav__favorites.mobile {
+  visibility: hidden;
+  opacity: 0;
+  transition: all $animation;
+}
+
+.site-nav__favorites-mobile.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background-color: $white-bg-color;
+
+  body.dark & {
+    background-color: $dark-bg-color;
+    border: 1px solid $white-bg-color;
+  }
+}
+
+.site-nav__favorites.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.site-nav__favorites.mobile {
+  z-index: 2;
+  min-width: 213px;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  bottom: 0;
+}
+
+.site-nav-mobile__item {
+  padding-bottom: 15px;
+  transition: all $animation;
+}
+
+.site-nav__item-menu {
+  padding: 15px;
+}
+
+.site-nav__item-menu:active {
+  background-color: $accent-color;
+}
+
+.site-nav__item-menu:active .site-nav__link-menu {
+  color: $white-bg-color;
+
+  body.dark & {
+    color: $dark-bg-color;
+  }
+}
+
+.site-nav__link-menu {
+  color: #000000;
+  body.dark & {
+    color: $white-bg-color;
+  }
+}
+
+.site-nav-mobile {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+@media screen and (max-width: $tablet) {
+  // логотип
+  .header_logo {
+    margin-right: 125px;
+  }
+  .logo_image {
+    height: 34px;
+    width: 123px;
+  }
+
+  .header-switcher {
+    display: none;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header_logo-mobile {
+    display: none;
+  }
+
+  .signup {
     margin-bottom: -15px;
+  }
 
-}
-
-.form-submit {
+  .form-submit {
     display: none;
-}
+  }
 
-.header-switcher.mobile{
+  .header-switcher.mobile {
     padding-bottom: 44px;
-}
+  }
 
-.mobile-menu{
-   display: flex;
-   align-items: flex-start;
-   padding-top: 27px;
-}
+  .mobile-menu {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 27px;
+  }
 
-.form-submit.mobile{
+  .form-submit.mobile {
     margin-bottom: 40px;
-}
+  }
 
-.site-nav-mobile__link,
-.site-nav-mobile__item{
+  .site-nav-mobile__link,
+  .site-nav-mobile__item {
     font-size: 28px;
     font-weight: 400;
     color: #000000;
 
     body.dark & {
-            color: $white-bg-color;
-        }
-}
+      color: $white-bg-color;
+    }
+  }
 
-
-.site-nav-mobile__item{
+  .site-nav-mobile__item {
     margin-top: 32px;
-}
+  }
 
-.site-nav-mobile__arrow {
+  .site-nav-mobile__arrow {
     align-items: inherit;
 
     body.dark & {
-            fill: $white-bg-color;
-        }
-}
+      fill: $white-bg-color;
+    }
+  }
 
-.header-switcher.mobile {
+  .header-switcher.mobile {
     display: flex;
-}
+  }
 
-.form-submit.mobile {
+  .form-submit.mobile {
     display: flex;
+  }
 }
-}
-
-
-
-
-
 
 @media screen and (min-width: $tablet) {
-.mobile-menu {
-        width: 100vw;
-            height: 100vh;}
-.logo_image {
+  .mobile-menu {
+    width: 100vw;
+    height: 100vh;
+  }
+  .logo_image {
     height: 43px;
     width: 156px;
-}
+  }
 
-.page-header__container {
+  .page-header__container {
     align-items: center;
     position: relative;
-    padding-left:32px ;
+    padding-left: 32px;
     padding-right: 32px;
-}
+  }
 
-.form-submit{
+  .form-submit {
     margin-top: 11px;
+  }
 
-}
-
-.signup__btn{
+  .signup__btn {
     margin-top: 14px;
-}
-.signup {
+  }
+  .signup {
     margin-bottom: 0px;
+  }
+  .mobile-menu__open-icon {
+    margin-top: 11px;
+  }
 
-}
-.mobile-menu__open-icon{
-    margin-top: 11px;}
-
-.header__nav {
+  .header__nav {
     display: none;
-}
+  }
 
-.header_logo{
+  .header_logo {
     margin-right: 83px;
-}
-.signup__btn{
+  }
+  .signup__btn {
     margin-right: 40px;
-}
+  }
 
-
-
-.mobile-menu {
+  .mobile-menu {
     padding-top: 22px;
-}
+  }
 
-.header-switcher.mobile{
+  .header-switcher.mobile {
     display: flex;
     padding-top: 15px;
     margin-left: -136px;
     margin-bottom: 54px;
-}
+  }
 
-.site-nav-mobile__link,
-.site-nav-mobile__item {
+  .site-nav-mobile__link,
+  .site-nav-mobile__item {
     font-size: 28px;
     font-weight: 400;
     color: #000000;
 
     body.dark & {
-            color: $white-bg-color;
-        }
-}
-
-.site-nav-mobile__item {
-    margin-top: 32px;
-}
-
-.form-submit.mobile {
-    display: none;
-}
-
-.header-switcher{
-    display: none;
-}
-
-.site-nav-mobile{
-    visibility: visible;}
-
-.site-nav-mobile__arrow {
-
-    body.dark & {
-        fill: $white-bg-color;
+      color: $white-bg-color;
     }
+  }
+
+  .site-nav-mobile__item {
+    margin-top: 32px;
+  }
+
+  .form-submit.mobile {
+    display: none;
+  }
+
+  .header-switcher {
+    display: none;
+  }
+
+  .site-nav-mobile {
+    visibility: visible;
+  }
+
+  .site-nav-mobile__arrow {
+    body.dark & {
+      fill: $white-bg-color;
+    }
+  }
 }
-}
-
-
-
-
 
 @media screen and (min-width: $desktop) {
-.mobile-menu {
+  .mobile-menu {
     display: none;
-}
-    
-.site-nav__favorites {
-     display: none;
-}
+  }
 
-.mobile-menu__burger {
+  .site-nav__favorites {
     display: none;
-}
-.form-submit{
+  }
+
+  .mobile-menu__burger {
+    display: none;
+  }
+  .form-submit {
     margin-right: 90px;
     margin-bottom: -5px;
-}
+  }
 
- .header_logo {
+  .header_logo {
     margin-right: 90px;
- }
+  }
 
-.page-header__container {
+  .page-header__container {
     padding-left: 16px;
     padding-right: 16px;
-    align-items:flex-end;
+    align-items: flex-end;
     position: relative;
     justify-content: space-around;
-     }
+  }
 
-.form-submit {
+  .form-submit {
     margin-top: 0px;
-}
-.signup__btn {
+  }
+  .signup__btn {
     margin-top: 0px;
-}
+  }
 
-.mobile-menu__open-icon {
+  .mobile-menu__open-icon {
     margin-top: 0px;
-}
-.signup__btn--desktop{
-    margin-right: 42px;}
-    
+  }
+  .signup__btn--desktop {
+    margin-right: 42px;
+  }
 
-.header__nav{
-       display:flex;
-       gap: 60px;
-       color: $dark-bg-color;
-       margin-right: 191px;
-     }
+  .header__nav {
+    display: flex;
+    gap: 60px;
+    color: $dark-bg-color;
+    margin-right: 191px;
+  }
 
-.site-nav__link{
+  .site-nav__link {
     color: #202025;
     font-size: 18px;
-    transition-duration: $animation;
+    transition-duration: all $animation;
     body.dark & {
-            color: $white-bg-color;
-        }
-}
+      color: $white-bg-color;
+    }
+  }
 
-.site-nav__favorites{
+  .site-nav__favorites {
     visibility: hidden;
-    opacity: 0;}
+    opacity: 0;
+  }
 
-
-.site-nav__favorites.is-open{
+  .site-nav__favorites.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     background-color: $white-bg-color;
 
-    body.dark &{
-    background-color: $dark-bg-color;
-}
-}
+    body.dark & {
+      background-color: $dark-bg-color;
+    }
+  }
 
-
-.site-nav__item{
+  .site-nav__item {
     cursor: pointer;
     font-size: 18px;
     transition-duration: $animation;
     body.dark & {
-            color: $white-bg-color;
-        }
-}
+      color: $white-bg-color;
+    }
+  }
 
-.site-nav__link:hover {
+  .site-nav__link:hover {
     color: $accent-color;
-    transition: $animation;
-}
+    transition: all $animation;
+  }
 
-.site-nav__item:hover {
+  .site-nav__item:hover {
     color: $accent-color;
-    transition: $animation;
-}
+    transition: all $animation;
+  }
 
-.header-switcher{
+  .header-switcher {
     display: flex;
     margin-bottom: 10px;
-}
+  }
 
-.site-nav__favorites{
+  .site-nav__favorites {
     display: flex;
-}
+  }
 
-.site-nav__favorites{
+  .site-nav__favorites {
     z-index: 2;
     min-width: 213px;
     border: 1px solid $accent-color;
@@ -649,53 +613,46 @@ input::placeholder {
     position: absolute;
     transform: translate(50%, 30%);
     flex-direction: column;
-    transition: $animation;
+    transition: all $animation;
 
     body.dark & {
-            border: 1px solid $white-bg-color;
-        }
-}
+      border: 1px solid $white-bg-color;
+    }
+  }
 
-.site-nav__item-menu{
+  .site-nav__item-menu {
     padding: 12px;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.33;
+  }
 
-  
+  .site-nav__item-menu:hover {
+    background-color: $accent-color;
+    transition: all $animation;
+  }
 
-}
-
-.site-nav__item-menu:hover{
-background-color: $accent-color;
-transition: $animation;
-}
-
-.site-nav__link-menu{
+  .site-nav__link-menu {
     color: #000000;
     body.dark & {
-            color: $white-bg-color;
-        }
+      color: $white-bg-color;
+    }
+  }
 
-    
-}
-
-.site-nav__item-menu:hover .site-nav__link-menu{
+  .site-nav__item-menu:hover .site-nav__link-menu {
     color: $white-bg-color;
-    transition: $animation;
+    transition: all $animation;
 
-    body.dark &{
-    color:$dark-bg-color}
-}
+    body.dark & {
+      color: $dark-bg-color;
+    }
+  }
 
-.header-switcher{
+  .header-switcher {
     padding-top: 0px;
-}
+  }
 
-.header_logo {
+  .header_logo {
     margin-right: 43px;
+  }
 }
-
-}
-
-

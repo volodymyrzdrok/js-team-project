@@ -16,5 +16,6 @@ refs.searchCocktailsInput[0].addEventListener('submit', getCocktailsByName);
 refs.searchCocktailsInput[1].addEventListener('submit', getCocktailsByName);
 refs.lettersContainer.addEventListener('click', getCocktailsByLetter);
 refs.productList.addEventListener('click', renderModalCard);
-refs.checkboxInput.addEventListener('change', themeController);
+refs.checkboxInput[0].addEventListener('change', themeController);
+refs.checkboxInput[1].addEventListener('change', themeController);
 themeOn();

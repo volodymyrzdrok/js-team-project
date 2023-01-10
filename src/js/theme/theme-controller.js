@@ -6,7 +6,8 @@ const onDarkTheme = localStorage.getItem(THEME_SWITCHER);
 export function themeOn() {
   if (onDarkTheme) {
     refs.bodyRef.classList.add(THEME_DARK);
-    refs.checkboxInput.checked = true;
+    refs.checkboxInput[0].checked = true;
+    refs.checkboxInput[1].checked = true;
   }
 }
 
