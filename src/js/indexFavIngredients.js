@@ -1,3 +1,4 @@
+import 'animate.css';
 import { refs } from './refs/refs';
 import { DEBOUNCE_DELAY } from './utils/constans';
 import _debounce from 'lodash.debounce';

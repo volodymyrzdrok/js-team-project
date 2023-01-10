@@ -25,3 +25,11 @@ export const scrollSmoth = className => {
     behavior: 'smooth',
   });
 };
+
+export const hideELements = (elDom, hide) => {
+  if (hide) {
+    elDom.classList.add('is-hidden');
+  } else {
+    elDom.classList.remove('is-hidden');
+  }
+};

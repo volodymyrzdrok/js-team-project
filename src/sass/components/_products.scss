@@ -38,6 +38,15 @@
     @media screen and(min-width:$desktop) {
       width: calc((100% - 64px) / 3);
     }
+    &:nth-child(odd) {
+      animation: fadeInRight;
+      animation-duration: 400ms;
+    }
+
+    &:nth-child(even) {
+      animation: fadeInLeft;
+      animation-duration: 400ms;
+    }
   }
 
   &__img {

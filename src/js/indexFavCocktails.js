@@ -1,3 +1,5 @@
+import 'animate.css';
+
 import _debounce from 'lodash.debounce';
 import {
   getFavCocktails,

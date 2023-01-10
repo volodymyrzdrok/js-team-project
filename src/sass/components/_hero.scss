@@ -47,7 +47,7 @@
   margin-right: auto;
   margin-bottom: 20px;
   opacity: 0.8;
-  color: $secondary-dark-text-color;
+  // color: $dark-bg-color;
 
   @media screen and (min-width: $mobile) {
       width: 280px;
@@ -57,7 +57,7 @@
       width: 324px;
       margin-bottom: 40px;
       margin-left: 0;
-      color: inherit;
+      // color: inherit;
   }
 
   @media screen and (min-width: $desktop) {
@@ -229,8 +229,6 @@
   height: 9px;
   border-bottom: 1px solid $accent-color;
   border-left: 1px solid $accent-color;
-// border-bottom: 1px solid $secondary-white-text-color;
-// border-left: 1px solid $secondary-white-text-color;
   border-bottom-left-radius: 2px;
   transform: rotate(-45deg) translate(50%, 0%);
   margin-top: 15px;
@@ -239,19 +237,22 @@
   margin-left: 14px;
 }
 
-
-.keyboard__cstm-summary:focus   {
-  outline: none;
-  // background-color:$accent-color;
-  // color:$secondary-white-text-color;
-  //колір 
+.keyboard__cstm-summary--active:after{
+border-bottom: 1px solid $secondary-white-text-color;
+border-left: 1px solid $secondary-white-text-color;
 }
 
+
+.keyboard__cstm-summary--active {
+  outline: none;
+  background-color:$accent-color;
+  color:$secondary-white-text-color;
+}
 
 .select-item {
   margin: 0;
 }
-/* FAKE SELECT */
+/*SELECT */
 
 .keyboard__cstm-summary.radios  {
   counter-reset: radios;
@@ -265,7 +266,13 @@
   counter-increment: radios;
   appearance: none;
   display: none;
+  color: $accent-color;
 }
+
+.keyboard__cstm-input--active[type='radio']   {
+  color: $secondary-white-text-color;
+}
+
 
 .keyboard__cstm-input[type='radio']:checked {
   display: inline;
@@ -278,16 +285,12 @@
   display: block;
   font-weight: 700;
   font-size: 16px;
-  color: $accent-color;
-  // color:$secondary-white-text-color;
-  // color:$secondary-white-text-color;
 }
 
 .keyboard__cstm-select_list {
   counter-reset: labels;
   width: 93px;
   height: 84px;
-  background: $white-bg-color;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -313,13 +316,12 @@
 }
 
 .keyboard__cstm-select_list::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 .keyboard__cstm-select_list::-webkit-scrollbar-thumb {
   background: $primary-dark-text-color;
-  border-radius: 5px;
-  border: 3px solid $white-bg-color ;
+  border-radius: 2px;
 }
 
 
