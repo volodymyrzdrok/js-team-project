@@ -195,21 +195,23 @@
   &__button {
     padding: 0%;
     border: none;
-    background-color: $white-bg-color;
+    // background-color: $white-bg-color;
+    background-color: transparent;
     padding-right: 8px;
     display: flex;
     align-items: center;
     body.dark & {
-      background-color: $dark-bg-color;
+      // background-color: $dark-bg-color;
     }
   }
 
   &__input {
     height: 24px;
-    width: 100%;
+    width: 99%;
     font-size: 14px;
     color: #5f6775;
     padding-left: 8px;
+    margin-left: 2px;
   }
 }
 
