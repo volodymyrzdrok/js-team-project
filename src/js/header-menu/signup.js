@@ -1,10 +1,7 @@
-  const refsSign = {
-    signupWindow: document.querySelector('.signup-greeting'),
-    signupButton: document.querySelector('.signup__btn'),
-  };
+import { refsSign } from '../refs/refs';
 
-  refsSign.signupButton.addEventListener('click', toggleModal);
+refsSign.signupButton.addEventListener('click', toggleModal);
 
-  function toggleModal() {
-    refsSign.signupWindow.classList.toggle('is-open');
-  }
+function toggleModal() {
+  refsSign.signupWindow.classList.toggle('is-open');
+}

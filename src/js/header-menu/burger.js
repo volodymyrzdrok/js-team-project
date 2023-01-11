@@ -1,8 +1,4 @@
-const refsBurger = {
-  openMenuBtn: document.querySelector('.mobile-menu__burger'),
-  closeMenuBtn: document.querySelector('.mobile-menu__close-btn'),
-  menu: document.querySelector('.mobile-menu'),
-};
+import { refsBurger } from '../refs/refs';
 
 refsBurger.openMenuBtn.addEventListener('click', toggleModal);
 refsBurger.closeMenuBtn.addEventListener('click', toggleModal);

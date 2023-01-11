@@ -16,3 +16,4 @@ export const DEBOUNCE_DELAY = 200;
 export const THEME_SWITCHER = 'theme-switcher';
 
 export const THEME_DARK = 'dark';
+export const AUTH_USER = 'auth-user-data';
