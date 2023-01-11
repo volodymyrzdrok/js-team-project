@@ -14,7 +14,8 @@ export const nitiflix = (typeOfAttentions, message) => {
   return Notiflix.Notify[typeOfAttentions](message, {
     position: 'right-top',
     distance: '90px',
-    zindex: clientWidth > 745 ? 6 : 20,
+    zindex: clientWidth < 1280 ? 14 : 6,
+    // zindex: 40,
     timeout: 4000,
     warning: {
       background: '#fd5103',
