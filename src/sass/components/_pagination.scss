@@ -1,14 +1,11 @@
 #tui-pagination-container {
-  padding: 40px;
-  margin: 14px 0 12px;
-  margin-bottom: 60px;
+  padding: 24px 60px;
   line-height: normal;
   text-align: center;
   font-size: 0;
-  /* @media screen and (min-width: 320px) and (max-width: 767px) {
-    padding: 0;
-    margin-bottom: 40px;
-  } */
+  @include tablet-media {
+    padding: 32px 60px;
+  }
 
   & .tui-page-btn {
     display: inline-block;
@@ -23,6 +20,13 @@
     line-height: 1;
     vertical-align: middle;
     border: 1px solid #fe7031;
+
+    @include tablet-media {
+      height: 40px;
+      width: 40px;
+      font-size: 16px;
+      line-height: 20px / 16px;
+    }
   }
 
   & .tui-prev-is-ellip,

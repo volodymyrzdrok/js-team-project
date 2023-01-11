@@ -3,7 +3,6 @@ import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { refs } from '../refs/refs';
 import Pagination from 'tui-pagination';
 import sprite from '../../images/svgs.svg'
-// import 'tui-pagination/dist/tui-pagination.css';
 
 const container = document.getElementById('tui-pagination-container');
 let pagination = null;
@@ -15,7 +14,7 @@ const options = {
   itemsPerPage: rowsPerPage,
   visiblePages: 3,
   page: 1,
-  centerAlign: false,
+  centerAlign: true,
   firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
     template: {
@@ -43,15 +42,14 @@ export function renderMarkupList(data, togglePag) {
     const end = start + rowsPerPage;
     if (index >= start && index < end) return true;
   });
-    console.log('paginatedData :>> ', paginatedData);
+
     const totalPage = Math.ceil(data.length / rowsPerPage)
-    console.log('totalPage :>> ', totalPage);
+
     renderElementsMarkup(refs.productList, markupProductsList, paginatedData);
-//   if(totalPage <= 1 ) return
   if (togglePag === 'first') pagination = null;
   if (!pagination) {
     options.totalItems = data.length;
-    displayPagination(data);
+    totalPage > 1 && displayPagination(data);
   }
 }
 
@@ -61,7 +59,6 @@ function displayPagination(data) {
   pagination = new Pagination(container, options);
   pagination.on('afterMove', event => {
     currentPage = event.page;
-    console.log('currentPage :>> ', currentPage);
     renderMarkupList(data);
   });
 }
