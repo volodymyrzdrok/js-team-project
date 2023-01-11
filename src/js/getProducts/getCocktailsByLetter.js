@@ -3,7 +3,10 @@ import { fetchProductsByLetter } from '../api/api';
 import { refs } from '../refs/refs';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { imgNotFound } from '../templates/markupImages';
+import {renderMarkupList} from '../pagination/class'
+const clientWidth = document.documentElement.clientWidth;
 import { clientWidth } from '../utils/constans';
+
 
 export async function getCocktailsByLetter(e) {
   const checkEL = e.target.hasAttribute('data-letter');
@@ -34,5 +37,6 @@ function onResolve(drinks) {
     return;
   }
   productTitle.textContent = 'Searching results';
-  renderElementsMarkup(productList, markupProductsList, drinks);
+  // renderElementsMarkup(productList, markupProductsList, drinks);
+  renderMarkupList(drinks, 'first')
 }

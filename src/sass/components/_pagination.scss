@@ -1,0 +1,114 @@
+body.dark #tui-pagination-container {
+  & .tui-page-btn {
+    color: $secondary-white-text-color;
+  }
+
+  & .tui-ico-ellip {
+    height: 20px;
+    width: 22px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $hover-text-color;
+    margin-bottom: 8px;
+  }
+
+  & .tui-ico {
+    fill: $secondary-white-text-color;
+  }
+
+  & .tui-is-disabled {
+    fill: $primary-dark-text-color;
+  }
+}
+
+#tui-pagination-container {
+  padding: 24px 60px;
+  line-height: normal;
+  text-align: center;
+  font-size: 0;
+  @include tablet-media {
+    padding: 32px 60px;
+  }
+
+  & .tui-page-btn {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    padding: 10px 0 6px;
+    margin-left: 8px;
+    color: #1e1e1e;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: middle;
+    border: 1px solid $orange-btn-color;
+    &:hover {
+      background: $orange-btn-color;
+    }
+
+    @include tablet-media {
+      height: 40px;
+      width: 40px;
+      font-size: 16px;
+      line-height: 20px / 16px;
+    }
+  }
+
+  & .tui-prev-is-ellip,
+  & .tui-next-is-ellip {
+    border: transparent;
+  }
+
+  & .tui-first,
+  & .tui-last {
+    display: none;
+  }
+
+  & .tui-ico-ellip {
+    height: 20px;
+    width: 22px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $hover-text-color;
+    margin-bottom: 8px;
+  }
+
+  & .tui-prev,
+  & .tui-next {
+    position: relative;
+    border: transparent;
+    margin: auto;
+    cursor: pointer;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  & .tui-ico {
+    fill: $secondary-dark-text-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .tui-is-selected,
+  & strong {
+    color: #fff;
+    background: $orange-btn-color;
+    border: 1px solid $orange-btn-color;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.105);
+    cursor: default;
+    transform: scale(1.2);
+  }
+
+  & .tui-is-selected:hover {
+    background-color: $orange-btn-color;
+  }
+  & .tui-is-disabled {
+    fill: $primary-dark-text-color;
+  }
+}

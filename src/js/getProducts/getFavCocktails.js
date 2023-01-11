@@ -37,4 +37,5 @@ function onResolve(drinksArr) {
   }
 
   renderElementsMarkup(productList, markupProductsList, drinksArr);
+
 }

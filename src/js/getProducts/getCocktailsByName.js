@@ -3,6 +3,7 @@ import { refs } from '../refs/refs';
 import { imgNotFound } from '../templates/markupImages';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { onReject, renderElementsMarkup, scrollSmoth } from '../utils/utils';
+import {renderMarkupList} from '../pagination/class'
 
 export async function getCocktailsByName(e) {
   e.preventDefault();
@@ -27,5 +28,6 @@ function onResolve(drinks) {
     return;
   }
   productTitle.textContent = 'Searching results';
-  renderElementsMarkup(productList, markupProductsList, drinks);
+  // renderElementsMarkup(productList, markupProductsList, drinks);
+    renderMarkupList(drinks, 'first')
 }
