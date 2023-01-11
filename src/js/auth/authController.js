@@ -17,7 +17,6 @@ export function checkUserAuth() {
 
 export function authController(e) {
   const userData = userDataObj();
-  console.log(userData);
 
   if (!userData) {
     nitiflix('warning', 'You need to log in ! Please, do it');
