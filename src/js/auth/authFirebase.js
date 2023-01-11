@@ -1,7 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { firebaseConfig } from '../api/firebase-config';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithPopup,
+  signOut,
+  GoogleAuthProvider,
+} from 'firebase/auth';
 import { AUTH_USER } from '../utils/constans';
 import { onReject } from '../utils/utils';
 import { removListenerMenu, addListenerMenu } from './authController';
@@ -30,12 +35,29 @@ export const onLogInAuth = () => {
       addListenerMenu();
     })
     .catch(error => {
-      onReject(error);
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(credential);
     });
 };
 export const onLogOutAuth = () => {
   removListenerMenu();
   localStorage.removeItem(AUTH_USER);
+
+  return signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch(error => {
+      console.log(error);
+      // An error happened.
+    });
 };
 
 // 'через пару секунд забирати відкриття вікна   РЕалізуй!!'
