@@ -37,5 +37,5 @@ function onResolve(drinks) {
   }
   productTitle.textContent = 'Searching results';
   // renderElementsMarkup(productList, markupProductsList, drinks);
-  renderMarkupList(drinks)
+  renderMarkupList(drinks, 'first')
 }
