@@ -2,7 +2,9 @@ import { renderElementsMarkup } from '../utils/utils';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { refs } from '../refs/refs';
 import Pagination from 'tui-pagination';
-import sprite from '../../images/svgs.svg'
+import sprite from '../../images/svgs.svg';
+import { checkFavIngredientsIndexFile } from '../utils/constans';
+import { markupIngredients } from '../templates/markupIngredients';
 
 const container = document.getElementById('tui-pagination-container');
 let pagination = null;
@@ -16,25 +18,25 @@ const options = {
   page: 1,
   centerAlign: true,
   firstItemClassName: 'tui-first-child',
-    lastItemClassName: 'tui-last-child',
-    template: {
-         page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-         currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-         moveButton:
-              '<span class="tui-page-btn tui-{{type}}">' +
-                 `<svg class="tui-ico" width="24px" height="24px"><use href="${sprite}#icon-arrow-right"></use></svg>` +
-             '</span>',
-         disabledMoveButton:
-             '<span class="tui-page-btn  tui-{{type}}">' +
-                 `<svg class="tui-ico tui-is-disabled" width="24px" height="24px"><use href="${sprite}#icon-arrow-left"></use></svg>` +
-             '</span>',
-         moreButton:
-             '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-                 '<span class="tui-ico-ellip">...</span>' +
-             '</a>'
-     }
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<span class="tui-page-btn tui-{{type}}">' +
+      `<svg class="tui-ico" width="24px" height="24px"><use href="${sprite}#icon-arrow-right"></use></svg>` +
+      '</span>',
+    disabledMoveButton:
+      '<span class="tui-page-btn  tui-{{type}}">' +
+      `<svg class="tui-ico tui-is-disabled" width="24px" height="24px"><use href="${sprite}#icon-arrow-left"></use></svg>` +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
 };
-
 
 export function renderMarkupList(data, togglePag) {
   let paginatedData = data.filter((elem, index) => {
@@ -43,9 +45,13 @@ export function renderMarkupList(data, togglePag) {
     if (index >= start && index < end) return true;
   });
 
-    const totalPage = Math.ceil(data.length / rowsPerPage)
+  const totalPage = Math.ceil(data.length / rowsPerPage);
 
+  if (checkFavIngredientsIndexFile) {
+    renderElementsMarkup(refs.ingredList, markupIngredients, paginatedData);
+  } else {
     renderElementsMarkup(refs.productList, markupProductsList, paginatedData);
+  }
   if (togglePag === 'first') pagination = null;
   if (!pagination) {
     options.totalItems = data.length;
@@ -62,8 +68,6 @@ function displayPagination(data) {
     renderMarkupList(data);
   });
 }
-
-
 
 function perPage() {
   if (window.outerWidth < 745) {

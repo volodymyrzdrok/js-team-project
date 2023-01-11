@@ -4,6 +4,7 @@ import { FAV_COCKTAILS } from '../utils/constans';
 import { renderElementsMarkup, onReject } from '../utils/utils';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { favMessage } from '../templates/markupIngredients';
+import { renderMarkupList } from '../pagination/class';
 
 export async function getFavCocktails() {
   try {
@@ -36,6 +37,6 @@ function onResolve(drinksArr) {
     return;
   }
 
-  renderElementsMarkup(productList, markupProductsList, drinksArr);
-
+  // renderElementsMarkup(productList, markupProductsList, drinksArr);
+  renderMarkupList(drinksArr, 'first');
 }

@@ -4,6 +4,7 @@ import { FAV_INGREDIENTS } from '../utils/constans';
 import { renderElementsMarkup, onReject } from '../utils/utils';
 
 import { favMessage, markupIngredients } from '../templates/markupIngredients';
+import { renderMarkupList } from '../pagination/class';
 
 export async function getFavorIngredinents() {
   try {
@@ -36,5 +37,6 @@ function onResolve(ingredArr) {
     return;
   }
 
-  renderElementsMarkup(ingredList, markupIngredients, ingredArr);
+  // renderElementsMarkup(ingredList, markupIngredients, ingredArr);
+  renderMarkupList(ingredArr, 'first');
 }
