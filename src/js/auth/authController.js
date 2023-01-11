@@ -1,5 +1,5 @@
 import { toggleModal, toggleModalMobile } from '../header-menu/drop-down-menu';
-import { refs, refsMenu, refsSign } from '../refs/refs';
+import { refsMenu, refsSign } from '../refs/refs';
 import { AUTH_USER } from '../utils/constans';
 import defaultUserImg from '../../images/authorization.svg';
 import { nitiflix } from '../utils/utils';
@@ -19,7 +19,7 @@ export function authController(e) {
   const userData = userDataObj();
 
   if (!userData) {
-    nitiflix('warning', 'You need to log in ! Please, do it');
+    nitiflix('warning', 'You need to LOG IN ! Please, do it');
   } else {
     addListenerMenu();
   }
@@ -39,4 +39,3 @@ export function removListenerMenu() {
   refsSign.userGreating.innerHTML = `&#x261F; click btn &#x261F;`;
   refsSign.userImgEl.src = defaultUserImg;
 }
-// 'через пару секунд забирати відкриття вікна   РЕалізуй!!'
