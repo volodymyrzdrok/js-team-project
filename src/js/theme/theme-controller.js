@@ -1,4 +1,3 @@
-import { nth } from 'lodash';
 import { refs } from '../refs/refs';
 import { THEME_DARK, THEME_SWITCHER } from '../utils/constans';
 
