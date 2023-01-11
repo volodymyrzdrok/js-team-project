@@ -70,10 +70,10 @@ function displayPagination(data) {
 }
 
 function perPage() {
-  if (window.outerWidth < 745) {
+  if (window.outerWidth < 744) {
     return 3;
   }
-  if (window.outerWidth >= 745 && window.outerWidth < 1290) {
+  if (window.outerWidth >= 745 && window.outerWidth < 1280) {
     return 6;
   } else return 9;
 }
