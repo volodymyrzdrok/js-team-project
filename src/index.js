@@ -15,3 +15,5 @@ refs.lettersContainer.addEventListener('click', getCocktailsByLetter);
 refs.productList.addEventListener('click', renderModalCard);
 refs.checkboxInput.addEventListener('change', themeController);
 themeOn();
+
+
