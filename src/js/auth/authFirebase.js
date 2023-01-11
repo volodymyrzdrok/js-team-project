@@ -8,7 +8,7 @@ import {
   GoogleAuthProvider,
 } from 'firebase/auth';
 import { AUTH_USER } from '../utils/constans';
-import { onReject } from '../utils/utils';
+
 import { removListenerMenu, addListenerMenu } from './authController';
 
 const app = initializeApp(firebaseConfig);
@@ -61,3 +61,4 @@ export const onLogOutAuth = () => {
 };
 
 // 'через пару секунд забирати відкриття вікна   РЕалізуй!!'
+// зет індекс при певних ширинах інший!

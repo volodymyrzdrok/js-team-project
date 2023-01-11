@@ -8,5 +8,3 @@ export const firebaseConfig = {
   messagingSenderId: '338700524945',
   appId: '1:338700524945:web:6c676d5af2a340eaa54e30',
 };
-
-// треба додати домейн !!!

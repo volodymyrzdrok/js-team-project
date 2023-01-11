@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import { clientWidth } from './constans';
 
 export const renderElementsMarkup = (elDom, funcMark, data) =>
   (elDom.innerHTML = funcMark(data));
@@ -11,9 +12,9 @@ export const clearDomELements = elDom => (elDom.innerHTML = '');
 
 export const nitiflix = (typeOfAttentions, message) => {
   return Notiflix.Notify[typeOfAttentions](message, {
-    position: 'right-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+    position: 'right-top',
     distance: '90px',
-    zindex: 6,
+    zindex: clientWidth > 745 ? 6 : 11,
     timeout: 4000,
     warning: {
       background: '#fd5103',
