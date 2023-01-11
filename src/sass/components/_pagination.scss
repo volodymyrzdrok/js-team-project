@@ -1,3 +1,27 @@
+body.dark #tui-pagination-container {
+  & .tui-page-btn {
+    color: $secondary-white-text-color;
+  }
+
+  & .tui-ico-ellip {
+    height: 20px;
+    width: 22px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $hover-text-color;
+    margin-bottom: 8px;
+  }
+
+  & .tui-ico {
+    fill: $secondary-white-text-color;
+  }
+
+  & .tui-is-disabled {
+    fill: $primary-dark-text-color;
+  }
+}
+
 #tui-pagination-container {
   padding: 24px 60px;
   line-height: normal;
@@ -19,7 +43,10 @@
     font-weight: normal;
     line-height: 1;
     vertical-align: middle;
-    border: 1px solid #fe7031;
+    border: 1px solid $orange-btn-color;
+    &:hover {
+      background: $orange-btn-color;
+    }
 
     @include tablet-media {
       height: 40px;
@@ -45,7 +72,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #fe7031;
+    color: $hover-text-color;
     margin-bottom: 8px;
   }
 
@@ -55,45 +82,33 @@
     border: transparent;
     margin: auto;
     cursor: pointer;
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   & .tui-ico {
+    fill: $secondary-dark-text-color;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  /* @media screen and (max-width: 767px) {
-  #tui-pagination-container .tui-page-btn {
-    height: 20px;
-    width: 20px;
-    border-radius: 5px;
-    padding: 7px 0 3px;
-    margin-left: 5px;
-    color: var(--footer-text-color);
-    font-size: 8px;
-    font-weight: normal;
-    line-height: 0.5;
-    vertical-align: middle;
-    border: 1px solid var(--footer-background-color);
-    border-width: 0.5px 0;
-  }
-} */
 
   & .tui-is-selected,
   & strong {
     color: #fff;
-    background: #fe7031;
-    border: 1px solid #fe7031;
+    background: $orange-btn-color;
+    border: 1px solid $orange-btn-color;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.105);
     cursor: default;
     transform: scale(1.2);
   }
 
   & .tui-is-selected:hover {
-    background-color: #ff6b08;
+    background-color: $orange-btn-color;
   }
   & .tui-is-disabled {
-    fill: #5f6775;
+    fill: $primary-dark-text-color;
   }
 }

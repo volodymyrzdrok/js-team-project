@@ -27,15 +27,24 @@
             <input class="form-submit__input" name="searchCocktailName" type="text" placeholder="Search">
 
 
-
+  
             
         </form>
         
-        <button class="signup__btn signup__btn--desktop" type="button">
-            <svg width="32px" height="32px">
-                <use href="/src/images/svgs.svg#icon-authorization"></use>
-            </svg> </button>
+        <!-- log in -->
+        <div class="signup">
+        <button class="signup__btn signup__btn--desktop" data-tooltip="name" type="button">
+            <img class="signup__image" width="32px" height="32px" alt="username" src="/src/images/authorization.svg">
+              
+            </img> </button>
+         <div class="signup-greeting">
+            <p class="signup-greeting__text">&#x261F; click btn &#x261F;</p>
+            <button class="signup-greeting__logout js-log-in">Log in</button>
+            <button class="signup-greeting__logout js-log-out">Log out</button>
+             
+         </div></div>
 
+         
         
 
 
@@ -81,6 +90,8 @@
                 <span class="header-switcher__item-dark">Dark</span>
             </div>
 
+            
+
            
 
             <form class="form-submit mobile">
@@ -111,6 +122,7 @@
                 </ul>
             </div>
 
+            
 
         </div>
 

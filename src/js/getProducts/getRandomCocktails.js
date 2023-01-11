@@ -2,10 +2,10 @@ import { refs } from '../refs/refs';
 import { fetchProductsRandom } from '../api/api';
 import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { hideELements, renderElementsMarkup } from '../utils/utils';
-
+import { clientWidth } from '../utils/constans';
 let amountCocktails = 3;
-const clientWidth = document.documentElement.clientWidth;
-if (clientWidth >= 786) {
+
+if (clientWidth >= 745) {
   amountCocktails = 6;
 }
 if (clientWidth >= 1280) {

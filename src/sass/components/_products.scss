@@ -4,7 +4,13 @@
 
   &__title {
     margin-bottom: 60px;
+
     color: $secondary-dark-text-color;
+
+    body.dark & {
+      color: white;
+    }
+
     @include font($size: 22px, $line: 42px, $weight: 600);
     @media screen and(min-width:$tablet) {
       font-family: 'Roboto';
@@ -61,6 +67,10 @@
   &__card-title {
     margin-bottom: 16px;
     color: $secondary-dark-text-color;
+    body.dark & {
+      color: white;
+    }
+
     font-family: 'Roboto';
     @include font($size: 26px, $line: 42px, $weight: 900);
   }
@@ -97,11 +107,17 @@
   font-family: 'Roboto';
   @include font($size: 14px, $line: 24px, $weight: 400);
   letter-spacing: 0.02em;
-  transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: filter $animation;
   &:hover,
   &:focus {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
   }
+
+  body.dark &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.35));
+  }
+
   @media screen and(min-width:400px) {
     width: 160px;
     height: 48px;
@@ -126,7 +142,7 @@
   border: 1px solid $accent-color;
   border-radius: 4px;
   color: $accent-color;
-  background: $white-bg-color;
+  background: #00000000;
   font-family: 'Roboto';
   transition: filter 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -135,6 +151,12 @@
   &:focus {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+
+  body.dark &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.25));
+  }
+
   @media screen and(min-width:400px) {
     width: 123px;
     height: 48px;

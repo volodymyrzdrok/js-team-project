@@ -5,18 +5,19 @@ import { markupProductsList } from '../templates/markupSearchingCocktails';
 import { imgNotFound } from '../templates/markupImages';
 import {renderMarkupList} from '../pagination/class'
 const clientWidth = document.documentElement.clientWidth;
+import { clientWidth } from '../utils/constans';
 
 
 export async function getCocktailsByLetter(e) {
   const checkEL = e.target.hasAttribute('data-letter');
   if (!checkEL) return;
-  
-if (clientWidth<745) {
-  e.target.classList.add("keyboard__cstm-input--active");
-  e.target.parentNode.classList.add("keyboard__cstm-summary--active");
-  const boxLetter = document.querySelector(".keyboard__cstm-select");
-  boxLetter.open = false;
-}
+
+  if (clientWidth < 745) {
+    e.target.classList.add('keyboard__cstm-input--active');
+    e.target.parentNode.classList.add('keyboard__cstm-summary--active');
+    const boxLetter = document.querySelector('.keyboard__cstm-select');
+    boxLetter.open = false;
+  }
   const letter = e.target.getAttribute('data-letter').trim();
 
   try {

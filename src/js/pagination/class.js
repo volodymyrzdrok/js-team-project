@@ -25,8 +25,8 @@ const options = {
                  `<svg class="tui-ico" width="24px" height="24px"><use href="${sprite}#icon-arrow-right"></use></svg>` +
              '</span>',
          disabledMoveButton:
-             '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-                 `<svg class="tui-ico" width="24px" height="24px"><use href="${sprite}#icon-arrow-left"></use></svg>` +
+             '<span class="tui-page-btn  tui-{{type}}">' +
+                 `<svg class="tui-ico tui-is-disabled" width="24px" height="24px"><use href="${sprite}#icon-arrow-left"></use></svg>` +
              '</span>',
          moreButton:
              '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +

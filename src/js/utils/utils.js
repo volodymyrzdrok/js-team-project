@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import { clientWidth } from './constans';
 
 export const renderElementsMarkup = (elDom, funcMark, data) =>
   (elDom.innerHTML = funcMark(data));
@@ -11,7 +12,17 @@ export const clearDomELements = elDom => (elDom.innerHTML = '');
 
 export const nitiflix = (typeOfAttentions, message) => {
   return Notiflix.Notify[typeOfAttentions](message, {
-    distance: '20px',
+    position: 'right-top',
+    distance: '90px',
+    zindex: clientWidth < 1280 ? 14 : 6,
+    // zindex: 40,
+    timeout: 4000,
+    warning: {
+      background: '#fd5103',
+      textColor: '#fff',
+      fontSize: '20px',
+      fontAwesomeIconSize: '44px',
+    },
   });
 };
 
@@ -33,3 +44,60 @@ export const hideELements = (elDom, hide) => {
     elDom.classList.remove('is-hidden');
   }
 };
+
+const btnUp = {
+  el: document.querySelector('.show-btn-up'),
+  scrolling: false,
+  show() {
+    if (
+      this.el.classList.contains('show-btn-up_hide') &&
+      !this.el.classList.contains('btn-up_hiding')
+    ) {
+      this.el.classList.remove('show-btn-up_hide');
+      this.el.classList.add('show-btn-up_hiding');
+      window.setTimeout(() => {
+        this.el.classList.remove('show-btn-up_hiding');
+      }, 300);
+    }
+  },
+  hide() {
+    if (
+      !this.el.classList.contains('show-btn-up_hide') &&
+      !this.el.classList.contains('btn-up_hiding')
+    ) {
+      this.el.classList.add('show-btn-up_hiding');
+      window.setTimeout(() => {
+        this.el.classList.add('show-btn-up_hide');
+        this.el.classList.remove('show-btn-up_hiding');
+      }, 300);
+    }
+  },
+  addEventListener() {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (this.scrolling && scrollY > 0) {
+        return;
+      }
+      this.scrolling = false;
+
+      if (scrollY > 400) {
+        this.show();
+      } else {
+        this.hide();
+      }
+    });
+
+    document.querySelector('.show-btn-up').onclick = () => {
+      this.scrolling = true;
+      this.hide();
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    };
+  },
+};
+
+btnUp.addEventListener();

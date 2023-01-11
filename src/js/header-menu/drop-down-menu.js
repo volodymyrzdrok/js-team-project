@@ -1,19 +1,15 @@
-(() => {
-  const refs = {
-    openMenuFav: document.querySelector('.site-nav__favorites'),
-    favorites: document.querySelector('.site-nav__item'),
-    favoritesMobile: document.querySelector('.site-nav-mobile__item'),
-    favoritesMobileMenu: document.querySelector('.site-nav__favorites-mobile')
-  };
+import { refsMenu } from '../refs/refs';
 
-    refs.favorites.addEventListener('click', toggleModal);
-    refs.favoritesMobile.addEventListener('click', toggleModalMobile);
+export function toggleModal() {
+  refsMenu.openMenuFav.classList.toggle('is-open');
+  setTimeout(() => {
+    refsMenu.openMenuFav.classList.toggle('is-open');
+  }, 3000);
+}
 
-  function toggleModal() {
-    refs.openMenuFav.classList.toggle('is-open');
-    }
-    
-    function toggleModalMobile() {
-    refs.favoritesMobileMenu.classList.toggle('is-open');
-  }
-})();
+export function toggleModalMobile() {
+  refsMenu.favoritesMobileMenu.classList.toggle('is-open');
+  setTimeout(() => {
+    refsMenu.favoritesMobileMenu.classList.toggle('is-open');
+  }, 3000);
+}

@@ -17,23 +17,23 @@
   width: 300px;
 
   @media screen and (min-width: $mobile) {
-      width: 300px;
+    width: 300px;
   }
 
   @media screen and (min-width: $tablet) {
-      width: 336px;
-      font-weight: 600;
-      font-size: 26px;
-      line-height: 1.62;
-      margin-bottom: 40px;
-      margin-left: 0;
+    width: 336px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.62;
+    margin-bottom: 40px;
+    margin-left: 0;
   }
 
   @media screen and (min-width: $desktop) {
-      width: 688px;
-      font-weight: 600;
-      font-size: 52px;
-      line-height: 1.54;
+    width: 688px;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 1.54;
   }
 }
 
@@ -50,20 +50,20 @@
   // color: $dark-bg-color;
 
   @media screen and (min-width: $mobile) {
-      width: 280px;
+    width: 280px;
   }
 
   @media screen and (min-width: $tablet) {
-      width: 324px;
-      margin-bottom: 40px;
-      margin-left: 0;
-      // color: inherit;
+    width: 324px;
+    margin-bottom: 40px;
+    margin-left: 0;
+    // color: inherit;
   }
 
   @media screen and (min-width: $desktop) {
-      width: 607px;
-      font-size: 18px;
-      line-height: 1.56;
+    width: 607px;
+    font-size: 18px;
+    line-height: 1.56;
   }
 }
 
@@ -71,12 +71,12 @@
   position: relative;
 
   @media screen and (min-width: $tablet) {
-      padding-top: 102px;
-      padding-bottom: 164px;
+    padding-top: 102px;
+    padding-bottom: 164px;
   }
 
   @media screen and (min-width: $desktop) {
-      padding-top: 67px;
+    padding-top: 67px;
   }
 
   position: relative;
@@ -88,12 +88,12 @@
   padding-top: 30px;
 
   @media screen and (min-width: $tablet) {
-      padding-top: 102px;
-      padding-bottom: 164px;
+    padding-top: 102px;
+    padding-bottom: 164px;
   }
 
   @media screen and (min-width: $desktop) {
-      padding-top: 67px;
+    padding-top: 67px;
   }
 }
 
@@ -103,63 +103,66 @@
   margin-right: auto;
 
   @media screen and (min-width: $tablet) {
-      position: absolute;
-      top: 77;
-      right: 0;
-      z-index: 5;
+    position: absolute;
+    top: 77;
+    right: 0;
+    z-index: 5;
   }
 
   @media screen and (min-width: $desktop) {
-      top: 7px;
-      right: 0;
+    top: 7px;
+    right: 0;
   }
 }
 
 .keyboard__list {
   display: none;
   @media screen and (min-width: $tablet) {
-      display: inline-block;
+    display: inline-block;
   }
   .keyboard__list {
-      @media screen and (min-width: $tablet) {
-          display: inline-block;
-      }
+    @media screen and (min-width: $tablet) {
+      display: inline-block;
+    }
   }
   .keyboard--item {
-      @media screen and (min-width: $tablet) {
-          width: 24px;
-          height: 25px;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 1.5;
-          align-items: center;
-          text-align: center;
-      }
-      @media screen and (min-width: $desktop) {
-          width: 40px;
-          height: 40px;
-          font-weight: 700;
-          font-size: 24px;
-      }
+    @media screen and (min-width: $tablet) {
+      width: 24px;
+      height: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.5;
+      align-items: center;
+      text-align: center;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 40px;
+      height: 40px;
+      font-weight: 700;
+      font-size: 24px;
+    }
 
-      color:$primary-dark-text-color;
+    color: $primary-dark-text-color;
   }
 
   @media screen and (min-width: $desktop) {
-      font-weight: 700;
-      font-size: 24px;
+    font-weight: 700;
+    font-size: 24px;
   }
 }
-.keyboard--itemletter{
+
+.keyboard--itemletter {
   color: $primary-dark-text-color;
   cursor: pointer;
-  transition:$animation;
+
+  transition: all $animation;
 }
 
 .keyboard--itemletter:hover,
 .keyboard--itemletter:focus,
-.keyboard--itemletter:active{
+.keyboard--itemletter:active {
   color: $accent-color;
+
   text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
   -webkit-text-stroke: 1px $primary-dark-text-color;
 }
@@ -181,16 +184,15 @@
   margin-right: auto;
   position: relative;
   @media screen and (min-width: $tablet) {
-      display: none;
+    display: none;
   }
-
 }
 
 .keyboard__cstm-select[open] {
   z-index: 1;
 }
 
-.keyboard__cstm-summary  {
+.keyboard__cstm-summary {
   width: 93px;
   height: 34px;
   margin-right: auto;
@@ -210,8 +212,7 @@
   display: none;
 }
 
-.keyboard__cstm-select[open] 
-.keyboard__cstm-summary:before  {
+.keyboard__cstm-select[open] .keyboard__cstm-summary:before {
   content: '';
   display: block;
   width: 100vw;
@@ -222,7 +223,7 @@
   left: 0;
 }
 
-.keyboard__cstm-summary:after  {
+.keyboard__cstm-summary:after {
   content: '';
   display: block;
   width: 9px;
@@ -237,16 +238,15 @@
   margin-left: 14px;
 }
 
-.keyboard__cstm-summary--active:after{
-border-bottom: 1px solid $secondary-white-text-color;
-border-left: 1px solid $secondary-white-text-color;
+.keyboard__cstm-summary--active:after {
+  border-bottom: 1px solid $secondary-white-text-color;
+  border-left: 1px solid $secondary-white-text-color;
 }
-
 
 .keyboard__cstm-summary--active {
   outline: none;
-  background-color:$accent-color;
-  color:$secondary-white-text-color;
+  background-color: $accent-color;
+  color: $secondary-white-text-color;
 }
 
 .select-item {
@@ -254,32 +254,31 @@ border-left: 1px solid $secondary-white-text-color;
 }
 /*SELECT */
 
-.keyboard__cstm-summary.radios  {
+.keyboard__cstm-summary.radios {
   counter-reset: radios;
 }
 
-.keyboard__cstm-summary.radios:before  {
+.keyboard__cstm-summary.radios:before {
   content: var(--selection);
 }
 
-.keyboard__cstm-input[type='radio']   {
+.keyboard__cstm-input[type='radio'] {
   counter-increment: radios;
   appearance: none;
   display: none;
   color: $accent-color;
 }
 
-.keyboard__cstm-input--active[type='radio']   {
+.keyboard__cstm-input--active[type='radio'] {
   color: $secondary-white-text-color;
 }
-
 
 .keyboard__cstm-input[type='radio']:checked {
   display: inline;
   display: block;
 }
 
-.keyboard__cstm-input[type='radio']:after  {
+.keyboard__cstm-input[type='radio']:after {
   content: attr(title);
   padding-left: 7px;
   display: block;
@@ -323,6 +322,3 @@ border-left: 1px solid $secondary-white-text-color;
   background: $primary-dark-text-color;
   border-radius: 2px;
 }
-
-
-

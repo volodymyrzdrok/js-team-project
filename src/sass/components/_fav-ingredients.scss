@@ -3,7 +3,13 @@
   padding-top: 40px;
   &__title {
     margin-bottom: 60px;
+
     color: $secondary-dark-text-color;
+
+    body.dark & {
+      color: white;
+    }
+
     @include font($size: 22px, $line: 42px, $weight: 600);
     @media screen and(min-width:$tablet) {
       font-family: 'Roboto';
@@ -53,6 +59,9 @@
   &__card-title {
     margin-bottom: 16px;
     color: $secondary-dark-text-color;
+    body.dark & {
+      color: white;
+    }
     font-family: 'Roboto';
     @include font($size: 26px, $line: 42px, $weight: 900);
   }
@@ -68,6 +77,9 @@
   &__desc {
     margin-bottom: 20px;
     color: $secondary-dark-text-color;
+    body.dark & {
+      color: white;
+    }
     text-transform: uppercase;
     @include font($size: 14px, $line: 21px, $weight: 600);
     @media screen and(min-width:$tablet) {
