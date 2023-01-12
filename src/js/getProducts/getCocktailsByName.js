@@ -1,9 +1,8 @@
 import { fetchProductsByName } from '../api/api';
 import { refs } from '../refs/refs';
 import { imgNotFound } from '../templates/markupImages';
-import { markupProductsList } from '../templates/markupSearchingCocktails';
-import { onReject, renderElementsMarkup, scrollSmoth } from '../utils/utils';
-import {renderMarkupList} from '../pagination/class'
+import { onReject, scrollSmoth } from '../utils/utils';
+import { renderMarkupList, resetPagination } from '../pagination/class';
 
 export async function getCocktailsByName(e) {
   e.preventDefault();
@@ -25,9 +24,10 @@ function onResolve(drinks) {
   if (!drinks) {
     productTitle.textContent = "Sorry, we didn't find any cocktail for you";
     productList.innerHTML = imgNotFound;
+    resetPagination();
     return;
   }
   productTitle.textContent = 'Searching results';
-  // renderElementsMarkup(productList, markupProductsList, drinks);
-    renderMarkupList(drinks, 'first')
+
+  renderMarkupList(drinks, 'first');
 }

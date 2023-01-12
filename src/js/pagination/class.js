@@ -52,7 +52,8 @@ export function renderMarkupList(data, togglePag) {
   } else {
     renderElementsMarkup(refs.productList, markupProductsList, paginatedData);
   }
-  if (togglePag === 'first') pagination = null;
+  if (togglePag === 'first') resetPagination();
+
   if (!pagination) {
     options.totalItems = data.length;
     totalPage > 1 && displayPagination(data);
@@ -76,4 +77,9 @@ function perPage() {
   if (window.outerWidth >= 745 && window.outerWidth < 1280) {
     return 6;
   } else return 9;
+}
+
+export function resetPagination() {
+  pagination = null;
+  container.innerHTML = '';
 }

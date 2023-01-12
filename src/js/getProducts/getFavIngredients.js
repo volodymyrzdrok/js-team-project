@@ -1,10 +1,9 @@
 import { getDataLocalStorage } from '../api/localStorageApi';
 import { refs } from '../refs/refs';
 import { FAV_INGREDIENTS } from '../utils/constans';
-import { renderElementsMarkup, onReject } from '../utils/utils';
-
-import { favMessage, markupIngredients } from '../templates/markupIngredients';
-import { renderMarkupList } from '../pagination/class';
+import { onReject } from '../utils/utils';
+import { favMessage } from '../templates/markupIngredients';
+import { renderMarkupList, resetPagination } from '../pagination/class';
 
 export async function getFavorIngredinents() {
   try {
@@ -34,9 +33,9 @@ function onResolve(ingredArr) {
     ingredList.innerHTML = favMessage(
       `You haven't added any favorite ingridients yet`
     );
+    resetPagination();
     return;
   }
 
-  // renderElementsMarkup(ingredList, markupIngredients, ingredArr);
   renderMarkupList(ingredArr, 'first');
 }

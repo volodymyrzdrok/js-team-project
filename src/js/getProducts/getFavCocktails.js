@@ -1,10 +1,9 @@
 import { getDataLocalStorage } from '../api/localStorageApi';
 import { refs } from '../refs/refs';
 import { FAV_COCKTAILS } from '../utils/constans';
-import { renderElementsMarkup, onReject } from '../utils/utils';
-import { markupProductsList } from '../templates/markupSearchingCocktails';
+import { onReject } from '../utils/utils';
 import { favMessage } from '../templates/markupIngredients';
-import { renderMarkupList } from '../pagination/class';
+import { renderMarkupList, resetPagination } from '../pagination/class';
 
 export async function getFavCocktails() {
   try {
@@ -34,9 +33,9 @@ function onResolve(drinksArr) {
     productList.innerHTML = favMessage(
       `You haven't added any favorite cocktails yet`
     );
+    resetPagination();
     return;
   }
 
-  // renderElementsMarkup(productList, markupProductsList, drinksArr);
   renderMarkupList(drinksArr, 'first');
 }
