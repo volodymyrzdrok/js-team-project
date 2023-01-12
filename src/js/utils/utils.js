@@ -16,7 +16,7 @@ export const nitiflix = (typeOfAttentions, message) => {
     distance: '90px',
     zindex: clientWidth < 1280 ? 14 : 6,
     // zindex: 40,
-    timeout: 4000,
+    timeout: 3200,
     warning: {
       background: '#fd5103',
       textColor: '#fff',

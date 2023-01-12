@@ -18,7 +18,7 @@ export function markupProductsList(arr) {
           height="280"
         />
         <div class="products__card">
-          <h3 class="products__card-title">${strDrink}</h3>
+          <h3 class="products__card-title">${strDrink.slice(0, 19)}</h3>
           <div class="products__card-btns">
             <button type="button"  class="products__card-btns--learn" data-idbtnlearn="${idDrink}">Learn more</button>
            ${btnAddInProductCard(!foundEl ? 'add' : 'remove', idDrink)}
