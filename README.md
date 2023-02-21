@@ -7,8 +7,7 @@ Cocktail Finder is a web application that helps you find cocktail recipes based 
 - Browse a list of popular cocktails
 - Save your favorite cocktail recipes
 - Responsive design for optimal use on mobile and desktop devices
-- Installation
-- To install Cocktail Finder, simply clone the repository and open the index.html file in your web browser:
+
 
 
 # Usage
